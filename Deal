@@ -30,10 +30,10 @@ const T = {
     heroTitle1: "Is Your Business",
     heroTitle2: "Ready to Sell?",
     heroSub: "Identify risks that could reduce your valuation or kill your deal.",
-    heroDesc: "A structured assessment of 15 M&A risk factors across ownership, financials, contracts, IP, and operations — trusted by advisors to prepare companies for transaction readiness.",
+    heroDesc: "A structured overview of 15 transaction considerations commonly reviewed by buyers across ownership, financials, contracts, IP, and operations — designed to help business owners understand their readiness profile.",
     startBtn: "Begin Assessment →",
     stats: [["15", "Risk Factors"], ["6", "Assessment Areas"], ["~5 min", "Completion Time"]],
-    disclaimer: "This tool does not constitute legal advice. Results are for informational purposes only.",
+    disclaimer: "This tool provides general informational insights only. It does not constitute legal advice and does not create a lawyer-client relationship.",
     progress: "Progress",
     of: "of",
     whyMatters: "Why This Matters",
@@ -45,16 +45,16 @@ const T = {
     assessmentComplete: "Assessment Complete",
     downloadPdf: "Download PDF Report",
     retake: "Retake Assessment",
-    nextSteps: "Next Steps",
-    addressIssues: "Address these issues before going to market",
-    advisorCta: "Proactive remediation maximizes valuation and reduces deal risk. An advisor can help you prioritize and resolve these issues efficiently.",
-    speakAdvisor: "Speak with an Advisor →",
+    nextSteps: "Possible Next Steps",
+    addressIssues: "Transaction considerations worth reviewing before going to market",
+    advisorCta: "Understanding these considerations before initiating a process may help clarify your situation. A professional conversation can help you interpret these results in the context of your specific circumstances.",
+    speakAdvisor: "Discuss your situation →",
     scoreBreakdown: "Score Breakdown",
     dealReady: "Deal Ready",
     moderateRisk: "Moderate Risk",
     highRisk: "High Risk",
     priorityFlags: "Priority Risk Flags",
-    recommendedAction: "Recommended Action",
+    recommendedAction: "What Buyers Typically Consider",
     riskLabel: "Risk",
     unsureLabel: "Unsure",
     noFlags: "No significant risk flags identified across all assessed areas.",
@@ -71,11 +71,11 @@ const T = {
     commonIssues: "3 Most Common Issues",
     commonIssuesList: ["Missing IP assignment agreements", "Customer revenue concentration", "Lack of signed customer contracts"],
     categoryBreakdown: "Category Breakdown",
-    top3Actions: "Top 3 Immediate Actions",
-    biggestRisks: "Biggest Deal Risks",
-    valuationImpact: "Estimated Valuation Impact",
-    valuationDesc: (score) => score >= 80 ? "Minimal impact expected. Strong readiness supports full valuation." : score >= 60 ? "Moderate discount likely (5–15%) unless key issues are resolved prior to closing." : "Significant discount likely (15–30%+). Material issues may require price adjustments or escrow holdbacks.",
-    statusDesc: (score) => score >= 80 ? "Your business demonstrates strong transaction readiness. Address any remaining risk flags to maximize value and accelerate due diligence." : score >= 60 ? "Your business shows moderate transaction readiness. Several material risks require attention before going to market." : "Significant issues have been identified that could materially impact valuation or transaction certainty. Remediation is advised before initiating a sale process.",
+    top3Actions: "Top 3 Considerations to Review",
+    biggestRisks: "Commonly Reviewed Elements",
+    valuationImpact: "Contextual Observations",
+    valuationDesc: (score) => score >= 80 ? "Based on the information provided, this profile is broadly consistent with what buyers typically expect. Individual circumstances may vary." : score >= 60 ? "Some elements identified may be reviewed closely by buyers and could influence valuation discussions, depending on the specific context." : "Several elements identified in this assessment are commonly associated with valuation adjustments or additional due diligence in transaction processes.",
+    statusDesc: (score) => score >= 80 ? "Based on the information provided, this profile reflects a number of elements commonly associated with transaction readiness. You may wish to review any remaining considerations with a professional." : score >= 60 ? "This profile suggests several elements that buyers commonly review closely during a transaction process. You may wish to consider these areas before initiating a sale." : "This profile highlights a number of elements that are frequently examined during due diligence and may warrant attention. Speaking with a professional may help clarify next steps.",
     advisorSectionTitle: "Your Advisor",
     advisorIntro: "Addressing the issues identified in this report can significantly improve your valuation and reduce deal risk. A brief conversation with an advisor can help clarify your situation and identify the most practical next steps.",
     advisorExpertise: "Areas of Expertise",
@@ -88,13 +88,17 @@ const T = {
     aboutAdvisorTitle: "About the Advisor",
     aboutAdvisorBio: "Christophe advises business owners and entrepreneurs on mergers, acquisitions, and corporate transactions. He regularly assists clients in preparing their businesses for sale and navigating complex deal structures.",
     aboutAdvisorBuiltBy: "This assessment was built in collaboration with",
+    preQuestionnaireDisclaimer: "This tool provides general informational insights based on common transaction considerations. It does not constitute legal advice and does not create a lawyer-client relationship.",
+    resultsDisclaimer: "This assessment is based solely on the information provided and reflects general transaction considerations. It is not a substitute for professional advice.",
+    advisorConsultText: "If you would like to discuss your specific situation, you may wish to consult a professional.",
+    valuationImpactLabel: "Contextual Observations",
     sectionIntros: {
-      ownership: "Ownership structure issues are among the most common causes of deal delays. Buyers need certainty over who controls the exit.",
-      financial: "Financial quality directly affects your valuation multiple. Unreliable books or concentrated revenue are red flags that buyers price heavily.",
-      contracts: "Without written contracts, buyers see fragile revenue. Legal exposure discovered in diligence often leads to price reductions.",
-      hr: "Key person risk and employment compliance are scrutinized in every deal. Unresolved HR issues can become costly post-close.",
-      ip: "IP ownership is non-negotiable. If the company doesn't clearly own its core assets, a deal cannot close.",
-      operations: "Operational independence from the founder is a key driver of transferable value and buyer confidence.",
+      ownership: "Ownership structure is commonly among the first areas buyers review. Clarity over share ownership and exit rights is typically expected early in a transaction process.",
+      financial: "Financial quality is a central factor in how buyers assess a business. Reliability of financial information and revenue concentration are elements commonly examined during due diligence.",
+      contracts: "Written agreements with key customers and awareness of legal exposure are elements buyers typically examine. These factors may influence how a buyer assesses the stability of revenue.",
+      hr: "Employment practices and key person dependencies are commonly reviewed in transaction processes. These elements may affect how buyers assess continuity and operational risk.",
+      ip: "Clarity of intellectual property ownership is typically an important element for buyers. Where ownership is unclear or undocumented, this may affect how a transaction is structured.",
+      operations: "Operational autonomy from the founder is commonly viewed as a factor in assessing the transferability of a business. Buyers often consider how the business would function under new ownership.",
     },
   },
   fr: {
@@ -103,11 +107,11 @@ const T = {
     confidential: "Évaluation confidentielle",
     heroTitle1: "Votre entreprise est-elle",
     heroTitle2: "prête à être vendue?",
-    heroSub: "Identifiez les risques pouvant réduire votre valorisation ou compromettre votre transaction.",
-    heroDesc: "Une évaluation structurée de 15 facteurs de risque en F&A couvrant la structure, les finances, les contrats, la PI et les opérations — utilisée par des conseillers pour préparer les entreprises à une transaction.",
+    heroSub: "Explorez les éléments couramment examinés par les acheteurs et susceptibles d'influencer une transaction.",
+    heroDesc: "Un aperçu structuré de 15 considérations transactionnelles couramment examinées par les acheteurs — conçu pour aider les propriétaires d'entreprises à mieux comprendre leur profil de préparation.",
     startBtn: "Commencer l'évaluation →",
     stats: [["15", "Facteurs de risque"], ["6", "Domaines évalués"], ["~5 min", "Durée"]],
-    disclaimer: "Cet outil ne constitue pas un avis juridique. Les résultats sont fournis à titre informatif seulement.",
+    disclaimer: "Cet outil fournit des informations générales à titre indicatif seulement. Il ne constitue pas un avis juridique et ne crée aucune relation avocat-client.",
     progress: "Progression",
     of: "sur",
     whyMatters: "Pourquoi c'est important",
@@ -119,16 +123,16 @@ const T = {
     assessmentComplete: "Évaluation complétée",
     downloadPdf: "Télécharger le rapport PDF",
     retake: "Recommencer l'évaluation",
-    nextSteps: "Prochaines étapes",
-    addressIssues: "Résolvez ces enjeux avant de mettre votre entreprise en vente",
-    advisorCta: "Une remédiation proactive maximise la valorisation et réduit les risques transactionnels. Un conseiller peut vous aider à prioriser et résoudre ces enjeux efficacement.",
-    speakAdvisor: "Parler à un conseiller →",
+    nextSteps: "Pistes de réflexion",
+    addressIssues: "Considérations transactionnelles à examiner avant une mise en vente",
+    advisorCta: "Comprendre ces éléments avant d'initier un processus peut aider à clarifier votre situation. Une conversation avec un professionnel peut vous aider à interpréter ces résultats dans le contexte de votre entreprise.",
+    speakAdvisor: "Discuter de votre situation →",
     scoreBreakdown: "Détail du score",
     dealReady: "Prêt pour la vente",
     moderateRisk: "Risque modéré",
     highRisk: "Risque élevé",
     priorityFlags: "Risques prioritaires",
-    recommendedAction: "Action recommandée",
+    recommendedAction: "Ce que les acheteurs examinent habituellement",
     riskLabel: "Risque",
     unsureLabel: "Incertain",
     noFlags: "Aucun facteur de risque significatif identifié dans l'ensemble des domaines évalués.",
@@ -145,11 +149,11 @@ const T = {
     commonIssues: "3 enjeux les plus fréquents",
     commonIssuesList: ["Absence de cession de droits de PI", "Concentration des revenus chez un seul client", "Absence de contrats écrits avec les clients"],
     categoryBreakdown: "Résultats par catégorie",
-    top3Actions: "3 actions prioritaires immédiates",
-    biggestRisks: "Principaux risques transactionnels",
-    valuationImpact: "Impact estimé sur la valorisation",
-    valuationDesc: (score) => score >= 80 ? "Impact minimal prévu. Une bonne préparation soutient une valorisation complète." : score >= 60 ? "Une décote modérée est probable (5–15 %) si les enjeux clés ne sont pas résolus avant la clôture." : "Une décote significative est probable (15–30 %+). Les enjeux importants pourraient entraîner des ajustements de prix ou des montants en séquestre.",
-    statusDesc: (score) => score >= 80 ? "Votre entreprise démontre une bonne préparation transactionnelle. Résolvez les risques résiduels pour maximiser la valeur." : score >= 60 ? "Votre entreprise présente une préparation modérée. Plusieurs risques importants doivent être traités avant de mettre l'entreprise en vente." : "Des enjeux significatifs ont été identifiés, susceptibles d'affecter la valorisation ou la certitude transactionnelle. Une remédiation est recommandée avant d'initier un processus de vente.",
+    top3Actions: "3 éléments prioritaires à examiner",
+    biggestRisks: "Éléments couramment examinés",
+    valuationImpact: "Observations contextuelles",
+    valuationDesc: (score) => score >= 80 ? "Le profil fourni est généralement cohérent avec ce que les acheteurs considèrent habituellement favorable. Les circonstances individuelles peuvent varier." : score >= 60 ? "Certains éléments identifiés sont fréquemment examinés par les acheteurs et pourraient influencer les discussions sur la valorisation, selon le contexte." : "Plusieurs éléments identifiés dans cette évaluation sont couramment associés à des ajustements de valorisation ou à une vérification diligente approfondie.",
+    statusDesc: (score) => score >= 80 ? "Sur la base des informations fournies, ce profil est généralement cohérent avec les éléments associés à une bonne préparation transactionnelle. Il peut être utile de passer en revue les considérations résiduelles avec un professionnel." : score >= 60 ? "Ce profil met en évidence plusieurs éléments que les acheteurs examinent couramment lors d'une transaction. Il peut être utile de considérer ces aspects avant d'initier un processus de vente." : "Ce profil met en lumière plusieurs éléments fréquemment examinés en vérification diligente. Il peut être utile d'en discuter avec un professionnel pour clarifier les prochaines étapes.",
     advisorSectionTitle: "Votre conseiller",
     advisorIntro: "Corriger les éléments identifiés dans ce rapport peut améliorer significativement la valeur de votre entreprise et réduire les risques liés à une transaction. Une brève conversation avec un conseiller peut aider à clarifier votre situation et à identifier les prochaines étapes les plus concrètes.",
     advisorExpertise: "Domaines d'expertise",
@@ -162,13 +166,17 @@ const T = {
     aboutAdvisorTitle: "À propos du conseiller",
     aboutAdvisorBio: "Christophe conseille des entrepreneurs et des propriétaires d'entreprises en matière de fusions, acquisitions et transactions commerciales. Il accompagne régulièrement ses clients dans la préparation et la vente de leur entreprise.",
     aboutAdvisorBuiltBy: "Cet outil a été développé en collaboration avec",
+    preQuestionnaireDisclaimer: "Cet outil fournit des informations générales basées sur des considérations courantes en matière de transactions. Il ne constitue pas un avis juridique et ne crée aucune relation avocat-client.",
+    resultsDisclaimer: "Cette évaluation est basée uniquement sur les informations fournies et reflète des considérations générales en matière de transactions. Elle ne remplace pas un avis professionnel.",
+    advisorConsultText: "Pour une analyse adaptée à votre situation, il peut être utile de consulter un professionnel.",
+    valuationImpactLabel: "Observations contextuelles",
     sectionIntros: {
-      ownership: "Les problèmes de structure d'actionnariat figurent parmi les principales causes de retard ou d'échec des transactions. Les acheteurs ont besoin de certitude quant au contrôle de la sortie.",
-      financial: "La qualité des finances influence directement votre multiple de valorisation. Des états financiers peu fiables ou une concentration des revenus sont des signaux d'alarme importants.",
-      contracts: "Sans contrats écrits, les acheteurs considèrent les revenus comme fragiles. Les expositions légales découvertes en vérification diligente mènent souvent à des réductions de prix.",
-      hr: "Le risque lié aux personnes clés et la conformité en matière d'emploi sont examinés dans chaque transaction. Les enjeux RH non résolus peuvent devenir coûteux après la clôture.",
-      ip: "La propriété de la PI est non négociable. Si l'entreprise ne détient pas clairement ses actifs essentiels, la transaction ne peut aboutir.",
-      operations: "L'autonomie opérationnelle par rapport au fondateur est un facteur clé de la valeur transférable et de la confiance des acheteurs.",
+      ownership: "La structure d'actionnariat est généralement parmi les premiers éléments examinés par les acheteurs. La clarté des droits de propriété et de sortie est habituellement attendue dès le début d'un processus transactionnel.",
+      financial: "La qualité des informations financières est un facteur central dans l'évaluation d'une entreprise par les acheteurs. La fiabilité des états financiers et la concentration des revenus sont des éléments couramment examinés en vérification diligente.",
+      contracts: "Les ententes écrites avec les clients importants et la connaissance des expositions légales sont des éléments que les acheteurs examinent typiquement. Ces facteurs peuvent influencer la façon dont un acheteur évalue la stabilité des revenus.",
+      hr: "Les pratiques en matière d'emploi et la dépendance aux personnes clés sont couramment examinées dans les processus transactionnels. Ces éléments peuvent influencer la façon dont les acheteurs évaluent la continuité et le risque opérationnel.",
+      ip: "La clarté de la propriété intellectuelle est typiquement un élément important pour les acheteurs. Lorsque la propriété est incertaine ou mal documentée, cela peut affecter la structuration d'une transaction.",
+      operations: "L'autonomie opérationnelle par rapport au fondateur est généralement perçue comme un facteur influençant la transférabilité d'une entreprise. Les acheteurs examinent souvent comment l'entreprise fonctionnerait sous une nouvelle direction.",
     },
   },
 };
@@ -189,8 +197,8 @@ const SECTIONS_DATA = [
           fr: "Disposez-vous d'une convention d'actionnaires signée et à jour?",
         },
         tooltip: {
-          en: "Deals often fail or get delayed due to shareholder disputes or unclear exit rights. Without this document, buyers face uncertainty about who controls the transaction.",
-          fr: "En droit civil québécois, l'absence de convention d'actionnaires expose l'entreprise à des litiges entre actionnaires qui peuvent bloquer ou retarder indéfiniment une transaction. Les acheteurs exigent une certitude quant aux droits de sortie avant d'aller de l'avant.",
+          en: "Buyers commonly review this document early in a transaction process. Where it is absent or outdated, questions about exit rights and shareholder consent may arise and require clarification.",
+          fr: "En contexte québécois, les acheteurs examinent généralement cette entente pour comprendre les droits de sortie et le fonctionnement décisionnel entre actionnaires. Son absence ou son caractère désuet peut soulever des questions qui nécessitent une clarification au cours du processus.",
         },
       },
       {
@@ -202,8 +210,8 @@ const SECTIONS_DATA = [
           fr: "Toutes les actions sont-elles correctement émises, documentées et conformes aux registres corporatifs?",
         },
         tooltip: {
-          en: "Issuance errors can require costly legal remediation before closing — and may delay or derail a transaction entirely.",
-          fr: "Des irrégularités dans l'émission d'actions ou dans le registre des actionnaires peuvent nécessiter une correction juridique coûteuse et retarder la clôture. Une vérification diligente corporative révèle systématiquement ces problèmes.",
+          en: "Corporate records are commonly reviewed during due diligence. Where irregularities exist in share issuance or documentation, buyers may require these to be addressed before a transaction can progress.",
+          fr: "Les registres corporatifs sont couramment examinés en vérification diligente. Des irrégularités dans l'émission d'actions ou la documentation peuvent soulever des questions qu'un acheteur voudra voir clarifiées avant de poursuivre le processus.",
         },
       },
       {
@@ -215,8 +223,8 @@ const SECTIONS_DATA = [
           fr: "Un actionnaire minoritaire pourrait-il bloquer ou retarder une vente?",
         },
         tooltip: {
-          en: "Minority blockers significantly reduce deal certainty. Buyers price this risk into their offer or walk away.",
-          fr: "Au Québec, l'absence de droits d'entraînement (drag-along) dans la convention d'actionnaires donne aux minoritaires un levier considérable. Les acheteurs institutionnels exigent généralement une certitude de clôture à 100 % avant de s'engager.",
+          en: "The ability of minority shareholders to influence or delay a transaction is commonly reviewed by buyers. Where such rights exist without corresponding drag-along provisions, this may affect how a transaction is structured or priced.",
+          fr: "Au Québec, les droits des actionnaires minoritaires et la présence de clauses d'entraînement sont généralement examinés par les acheteurs. L'absence de telles dispositions peut influencer la structuration d'une transaction ou les discussions sur les conditions de clôture.",
         },
       },
     ],
@@ -235,8 +243,8 @@ const SECTIONS_DATA = [
           fr: "Vos états financiers sont-ils préparés de façon cohérente et fiable (ex. : examinés ou audités par un CPA)?",
         },
         tooltip: {
-          en: "Buyers discount companies with unclear or unreliable financials. Clean books accelerate due diligence and support valuation.",
-          fr: "Les acheteurs appliquent une décote significative aux entreprises dont les finances sont peu fiables. Des états financiers compilés par un CPA, idéalement examinés ou vérifiés, accélèrent la vérification diligente et appuient le multiple de valorisation.",
+          en: "The reliability and consistency of financial information is commonly a central element of buyer due diligence. Reviewed or audited statements are typically viewed as a positive indicator of financial transparency.",
+          fr: "La fiabilité et la cohérence des informations financières sont généralement un élément central de la vérification diligente des acheteurs. Des états financiers examinés ou vérifiés par un CPA sont habituellement perçus comme un indicateur positif de transparence financière.",
         },
       },
       {
@@ -248,8 +256,8 @@ const SECTIONS_DATA = [
           fr: "Un seul client représente-t-il plus de 30 % de vos revenus?",
         },
         tooltip: {
-          en: "Customer concentration increases risk and lowers valuation multiples. Buyers worry about what happens if that client leaves post-acquisition.",
-          fr: "La concentration des revenus est l'un des principaux facteurs de réduction de valeur dans les transactions québécoises. Les acheteurs modélisent systématiquement le scénario de perte du client dominant et ajustent le prix en conséquence.",
+          en: "Revenue concentration is commonly reviewed by buyers when assessing business risk. Where a significant portion of revenue is tied to a single client, buyers may factor this into how they assess the stability of future cash flows.",
+          fr: "La concentration des revenus est couramment examinée par les acheteurs lors de l'évaluation du risque d'affaires. Lorsqu'une part importante des revenus provient d'un seul client, les acheteurs tendent à analyser la stabilité des flux financiers futurs en conséquence.",
         },
       },
       {
@@ -261,8 +269,8 @@ const SECTIONS_DATA = [
           fr: "Existe-t-il des positions fiscales agressives ou des risques fiscaux non résolus?",
         },
         tooltip: {
-          en: "Tax risks can lead to price reductions, escrow holdbacks, or extensive indemnification obligations at closing.",
-          fr: "Au Québec, les expositions fiscales incluent à la fois les impôts fédéraux (ARC) et provinciaux (Revenu Québec). Des cotisations non réglées, des crédits d'impôt contestés ou des positions agressives peuvent mener à des ajustements de prix importants ou à des retenues en séquestre à la clôture.",
+          en: "Tax positions and potential exposures are typically examined during due diligence, both at the federal and provincial level. Unresolved tax matters are commonly a point of discussion in transaction negotiations.",
+          fr: "Au Québec, les questions fiscales sont examinées tant au niveau fédéral (ARC) que provincial (Revenu Québec). Les positions fiscales non résolues constituent typiquement un point de discussion lors des négociations transactionnelles.",
         },
       },
     ],
@@ -281,8 +289,8 @@ const SECTIONS_DATA = [
           fr: "Avez-vous des contrats écrits avec vos clients importants?",
         },
         tooltip: {
-          en: "Revenue without contracts is considered unstable. Buyers need contractual certainty over future cash flows.",
-          fr: "En droit civil québécois, les ententes verbales sont juridiquement valides mais difficiles à prouver. Pour un acheteur, un revenu sans contrat écrit est un revenu à risque. Des contrats formels appuient la valorisation et rassurent les prêteurs.",
+          en: "Written agreements with key customers are commonly reviewed by buyers as an indicator of revenue stability. Where customer relationships are undocumented, buyers may view the associated revenue as less predictable.",
+          fr: "En contexte québécois, les ententes écrites avec les clients importants sont généralement examinées par les acheteurs comme indicateur de la stabilité des revenus. Lorsque ces relations ne sont pas documentées, les acheteurs peuvent percevoir les revenus associés comme moins prévisibles.",
         },
       },
       {
@@ -294,8 +302,8 @@ const SECTIONS_DATA = [
           fr: "Vos contrats importants contiennent-ils des clauses de changement de contrôle nécessitant un consentement avant une vente?",
         },
         tooltip: {
-          en: "These clauses can delay or block closing. Buyers must negotiate consent from counterparties — a time-consuming and uncertain process.",
-          fr: "Les clauses de changement de contrôle sont fréquentes dans les contrats commerciaux québécois. Sans stratégie de gestion préalable, l'acheteur doit obtenir le consentement de chaque partie contractante, ce qui peut prendre des semaines et créer de l'incertitude.",
+          en: "Change-of-control provisions are commonly identified and reviewed during due diligence. Where such clauses exist, buyers typically assess what consents may be required and how this could affect the timeline of a transaction.",
+          fr: "Les clauses de changement de contrôle sont courantes dans les contrats commerciaux québécois. Les acheteurs identifient généralement ces dispositions lors de la vérification diligente et évaluent les consentements potentiellement requis ainsi que leur incidence sur le calendrier transactionnel.",
         },
       },
       {
@@ -307,8 +315,8 @@ const SECTIONS_DATA = [
           fr: "Êtes-vous actuellement impliqué dans un litige ou une menace de poursuite?",
         },
         tooltip: {
-          en: "Legal disputes create uncertainty and often reduce purchase price through escrow arrangements or price adjustments.",
-          fr: "Un litige actif ou latent est l'un des plus grands facteurs de risque dans une transaction. En contexte québécois, cela inclut les poursuites civiles, les réclamations de la CNESST, les litiges fiscaux et les différends contractuels. Les acheteurs exigent systématiquement des représentations et garanties étendues en pareil cas.",
+          en: "Active or threatened legal disputes are routinely reviewed during due diligence. Their presence may introduce uncertainty that buyers seek to understand and, where material, factor into the terms of a transaction.",
+          fr: "Les litiges actifs ou latents sont systématiquement examinés en vérification diligente. En contexte québécois, cela inclut les poursuites civiles, les réclamations de la CNESST, les litiges fiscaux et les différends contractuels. Leur présence peut introduire une incertitude que les acheteurs cherchent à comprendre et à prendre en compte dans les conditions d'une transaction.",
         },
       },
     ],
@@ -327,8 +335,8 @@ const SECTIONS_DATA = [
           fr: "Les employés clés ont-ils des contrats d'emploi exécutoires (incluant des clauses de non-concurrence ou de rétention)?",
         },
         tooltip: {
-          en: "Loss of key employees post-sale is a major risk. Buyers need assurance that the team that drives value will remain.",
-          fr: "Au Québec, les clauses de non-concurrence doivent être limitées en durée, en territoire et en objet pour être valides. Des contrats mal rédigés peuvent être inapplicables, exposant l'acheteur au risque de départ des personnes clés après la clôture.",
+          en: "Employment agreements for key personnel are commonly reviewed by buyers to understand retention and continuity. The structure of non-compete provisions is also frequently examined, particularly in Quebec where enforceability depends on specific criteria.",
+          fr: "Au Québec, les contrats d'emploi des personnes clés sont couramment examinés par les acheteurs pour évaluer la rétention et la continuité. Les clauses de non-concurrence font également l'objet d'une attention particulière, leur validité étant soumise à des critères spécifiques en droit québécois.",
         },
       },
       {
@@ -340,8 +348,8 @@ const SECTIONS_DATA = [
           fr: "Certains travailleurs essentiels sont-ils classifiés comme travailleurs autonomes alors qu'ils fonctionnent comme des employés?",
         },
         tooltip: {
-          en: "Misclassification can create significant tax and employment liabilities that emerge during due diligence.",
-          fr: "La mauvaise classification de travailleurs est un risque majeur au Québec. La CNESST et Revenu Québec peuvent réclamer rétroactivement des cotisations, des indemnités de vacances et des avantages sociaux. Ce passif peut représenter plusieurs années de réclamations et constitue un signal d'alarme important lors de la vérification diligente.",
+          en: "Worker classification is a point commonly reviewed during due diligence, particularly in Quebec where CNESST and Revenu Québec may assess the nature of working relationships. Where classification questions exist, buyers may seek to understand the potential implications.",
+          fr: "La classification des travailleurs est un point couramment examiné en vérification diligente, notamment au Québec où la CNESST et Revenu Québec peuvent examiner la nature des relations de travail. Lorsque des questions de classification existent, les acheteurs cherchent généralement à en comprendre les implications potentielles.",
         },
       },
     ],
@@ -360,8 +368,8 @@ const SECTIONS_DATA = [
           fr: "Toute la propriété intellectuelle (code, marque, contenu) est-elle clairement détenue par l'entreprise — et non par des individus ou sous-traitants?",
         },
         tooltip: {
-          en: "Unassigned IP is a frequent deal-breaker. If key assets aren't owned by the company, buyers cannot acquire them.",
-          fr: "C'est l'un des enjeux les plus fréquents dans les transactions technologiques au Québec. Si un développeur externe ou un employé a créé des actifs sans cession de droits formelle, l'entreprise peut ne pas en être propriétaire légalement. Un acheteur ne peut acquérir ce qu'il n'est pas certain de recevoir.",
+          en: "Clear company ownership of intellectual property is typically expected by buyers. Where ownership is shared with or held by individuals or third parties, buyers commonly seek to understand how this may affect what is being acquired.",
+          fr: "La clarté de la propriété des actifs intellectuels est généralement un élément important pour les acheteurs, notamment dans les entreprises technologiques. Lorsque la propriété est partagée avec des individus ou des tiers sans documentation formelle, les acheteurs cherchent habituellement à comprendre ce qui est effectivement transférable.",
         },
       },
       {
@@ -373,8 +381,8 @@ const SECTIONS_DATA = [
           fr: "Tous les employés et sous-traitants ont-ils signé des ententes de cession de droits de propriété intellectuelle?",
         },
         tooltip: {
-          en: "Missing assignments create ownership ambiguity. Even one unsigned contractor can cloud title to critical IP.",
-          fr: "Même un seul prestataire sans entente de cession peut créer une incertitude sur la propriété des actifs clés. Les acheteurs exigent une chaîne de titre complète sur toute la PI. L'absence de ces ententes mène souvent à des séquestres ou des réductions de prix à la clôture.",
+          en: "Written IP assignment agreements are commonly reviewed to establish a clear chain of ownership. Where such documentation is incomplete, buyers may seek additional clarity before proceeding.",
+          fr: "Les ententes de cession de droits de propriété intellectuelle sont couramment examinées pour établir une chaîne de titre claire. Lorsque cette documentation est incomplète, les acheteurs cherchent généralement à obtenir des clarifications supplémentaires avant de progresser dans le processus.",
         },
       },
     ],
@@ -393,8 +401,8 @@ const SECTIONS_DATA = [
           fr: "L'entreprise peut-elle fonctionner au moins 3 mois sans votre implication directe?",
         },
         tooltip: {
-          en: "Founder dependency reduces transferability and value. Buyers discount or walk away from businesses that can't run without the seller.",
-          fr: "La dépendance au fondateur est l'un des principaux facteurs de réduction de valeur dans les PME québécoises. Les acheteurs financiers (fonds de capital-investissement) l'analysent systématiquement. Plus l'entreprise peut fonctionner de façon autonome, plus elle est valorisée.",
+          en: "The ability of a business to operate independently of its founder is commonly assessed by buyers as an indicator of transferability. This is often an area of focus in transactions involving owner-operated businesses.",
+          fr: "La capacité d'une entreprise à fonctionner de manière autonome est couramment évaluée par les acheteurs comme indicateur de transférabilité. Cet aspect est souvent un point d'attention dans les transactions impliquant des entreprises dirigées par leur propriétaire.",
         },
       },
       {
@@ -406,8 +414,8 @@ const SECTIONS_DATA = [
           fr: "Certaines relations avec des fournisseurs ou partenaires clés pourraient-elles prendre fin en cas de changement de propriétaire?",
         },
         tooltip: {
-          en: "Supply chain instability is a major risk factor. Buyers conduct deep diligence on operational continuity.",
-          fr: "Les ententes exclusives avec des fournisseurs ou distributeurs contiennent souvent des clauses de résiliation en cas de changement de contrôle. Il est essentiel d'identifier et de gérer ces relations avant d'initier un processus de vente au Québec.",
+          en: "Key supplier and partner relationships are commonly reviewed to assess operational continuity. Where agreements include change-of-control provisions, buyers typically seek to understand how these relationships may be affected by a transaction.",
+          fr: "Les relations avec les fournisseurs et partenaires clés sont couramment examinées pour évaluer la continuité opérationnelle. Lorsque des ententes comportent des clauses de changement de contrôle, les acheteurs cherchent généralement à comprendre comment ces relations pourraient être affectées par une transaction.",
         },
       },
     ],
@@ -493,38 +501,38 @@ function getSectionScore(sectionId, answers) {
 function getRiskActions(id, lang) {
   const actions = {
     en: {
-      q1: "Engage a corporate lawyer to draft or update a shareholders' agreement with drag-along and tag-along provisions before going to market.",
-      q2: "Conduct a corporate records review with legal counsel. Rectify any share issuance deficiencies prior to initiating a sale process.",
-      q3: "Review your shareholder agreement for drag-along rights. Consider pre-emptive negotiations with minority holders to secure consent.",
-      q4: "Prepare at minimum two years of CPA-reviewed financial statements. Consider a Quality of Earnings report for larger transactions.",
-      q5: "Develop a client diversification strategy. Document growth efforts with secondary clients and disclose concentration risk proactively.",
-      q6: "Obtain a tax opinion on any aggressive positions from both federal and provincial perspectives. Quantify exposure with your tax advisor.",
-      q7: "Formalize all key customer relationships in written contracts before initiating a sale process. Prioritize your top revenue relationships.",
-      q8: "Map all change-of-control provisions in key contracts. Develop a consent strategy and begin preliminary outreach prior to launching.",
-      q9: "Engage litigation counsel to assess, quantify, and where possible resolve all outstanding disputes before going to market.",
-      q10: "Have employment counsel review and update all employment agreements. Ensure non-compete clauses meet Quebec enforceability standards.",
-      q11: "Conduct a worker classification audit under Quebec standards. Remediate misclassification with appropriate employment and tax counsel.",
-      q12: "Commission a full IP audit. Execute written assignment agreements to transfer all intellectual property formally into the company.",
-      q13: "Immediately execute IP assignment agreements with all current contributors. Pursue retroactive agreements with former contractors where possible.",
-      q14: "Document key processes. Cross-train staff. Build a leadership layer capable of operating independently from the founder.",
-      q15: "Review key supplier and partner agreements for change-of-control provisions. Negotiate carve-outs or obtain consents prior to a sale process.",
+      q1: "Buyers typically expect a shareholders' agreement to be in place, covering exit rights and decision-making procedures. Where this document is absent or outdated, this is commonly an area of focus during due diligence. You may wish to review the current state of this documentation with a professional.",
+      q2: "Corporate records — including share registers and issuance documentation — are typically reviewed during due diligence. Where irregularities exist, buyers commonly seek clarification before a transaction can proceed. You may wish to verify that your records are complete and accurate.",
+      q3: "Buyers typically assess whether all shareholders are aligned on an exit. Where minority shareholders hold rights that could affect a transaction, this is commonly a point of discussion in structuring the deal. You may wish to understand what rights currently exist in your shareholder documentation.",
+      q4: "Reviewed or audited financial statements are commonly expected by buyers as a foundation for due diligence. Where financial information is inconsistent or unreviewed, buyers may seek additional verification. You may wish to consider the current state of your financial reporting with your accountant.",
+      q5: "Revenue concentration is commonly assessed by buyers as an indicator of business risk. Where a single client represents a significant portion of revenue, this is typically a point of discussion in valuation. You may wish to consider how this element might be perceived and how it is currently documented.",
+      q6: "Tax positions — at both the federal (CRA) and provincial (Revenu Québec) level — are typically reviewed during due diligence. Unresolved tax matters are commonly a subject of negotiation in transactions. You may wish to understand the nature of any open tax positions with your tax advisor.",
+      q7: "Written agreements with key customers are commonly reviewed by buyers as an indicator of revenue reliability. Where customer relationships are not documented, buyers may view them as less certain. You may wish to consider how your key customer relationships are currently formalized.",
+      q8: "Change-of-control provisions in key contracts are commonly identified and reviewed during due diligence. Their presence may affect the timing and structure of a transaction. You may wish to review your key contracts to understand what provisions, if any, exist in this area.",
+      q9: "Active or potential legal disputes are routinely reviewed during due diligence. Their presence may introduce uncertainty that buyers typically seek to understand and factor into transaction terms. You may wish to understand the current state and potential implications of any outstanding matters.",
+      q10: "Employment agreements for key personnel — including any non-compete provisions — are commonly reviewed by buyers. In Quebec, the validity of non-compete clauses depends on specific criteria. You may wish to review how these agreements are currently structured.",
+      q11: "Worker classification is commonly reviewed during due diligence, particularly in Quebec where CNESST and Revenu Québec may assess the nature of working relationships. Where classification questions exist, buyers typically seek to understand the potential implications. You may wish to review how your workforce is currently classified.",
+      q12: "Buyers typically expect intellectual property to be clearly and formally owned by the company. Where ownership involves individuals or third parties without written documentation, this may affect how the transaction is structured. You may wish to review how IP ownership is currently documented.",
+      q13: "Written IP assignment agreements are typically reviewed to establish a clear chain of title. Where such documentation is incomplete, buyers commonly seek additional clarity. You may wish to verify that all contributors — past and present — have appropriate documentation in place.",
+      q14: "The ability of a business to operate without its founder is commonly assessed as an indicator of transferability. Buyers often focus on this area in owner-operated businesses. You may wish to consider how operations are currently documented and how continuity is supported.",
+      q15: "Key supplier and partner agreements are commonly reviewed to assess operational continuity. Where change-of-control provisions exist, buyers typically seek to understand their potential impact. You may wish to review your key agreements to identify any relevant provisions.",
     },
     fr: {
-      q1: "Mandatez un avocat corporatif pour rédiger ou mettre à jour une convention d'actionnaires incluant des droits d'entraînement et de suite avant de mettre l'entreprise en vente.",
-      q2: "Effectuez une révision des registres corporatifs avec un conseiller juridique. Corrigez toute irrégularité dans l'émission d'actions avant d'initier un processus de vente.",
-      q3: "Vérifiez votre convention d'actionnaires pour les droits d'entraînement. Envisagez des négociations préventives avec les actionnaires minoritaires pour sécuriser leur consentement.",
-      q4: "Préparez au minimum deux ans d'états financiers examinés par un CPA. Envisagez un rapport de qualité des bénéfices pour les transactions importantes.",
-      q5: "Élaborez une stratégie de diversification de la clientèle. Documentez les efforts de croissance auprès des clients secondaires et divulguez proactivement le risque de concentration.",
-      q6: "Obtenez un avis fiscal sur toute position agressive, tant au niveau fédéral (ARC) que provincial (Revenu Québec). Quantifiez l'exposition avec votre conseiller fiscal.",
-      q7: "Formalisez toutes les relations clients importantes dans des contrats écrits avant d'initier un processus de vente. Priorisez vos principales sources de revenus.",
-      q8: "Cartographiez toutes les clauses de changement de contrôle dans vos contrats importants. Élaborez une stratégie de consentement et amorcez des démarches préliminaires avant le lancement.",
-      q9: "Mandatez un avocat en litige pour évaluer, quantifier et, dans la mesure du possible, résoudre tous les différends avant de mettre l'entreprise en vente.",
-      q10: "Faites réviser tous les contrats d'emploi par un avocat spécialisé. Assurez-vous que les clauses de non-concurrence respectent les critères de validité du droit québécois.",
-      q11: "Effectuez un audit de classification des travailleurs selon les normes québécoises (CNESST, Revenu Québec). Remédiez à toute mauvaise classification avec l'aide de conseillers juridiques et fiscaux.",
-      q12: "Commandez un audit complet de la PI. Signez des ententes de cession écrites pour transférer formellement tous les actifs intellectuels à l'entreprise.",
-      q13: "Faites signer immédiatement des ententes de cession de PI à tous les contributeurs actuels. Recherchez des ententes rétroactives avec les anciens prestataires dans la mesure du possible.",
-      q14: "Documentez les processus clés. Formez des membres de l'équipe en relève. Constituez une équipe de direction capable d'opérer indépendamment du fondateur.",
-      q15: "Passez en revue les ententes avec les fournisseurs et partenaires clés pour identifier les clauses de changement de contrôle. Négociez des exemptions ou obtenez des consentements avant le processus de vente.",
+      q1: "Les acheteurs s'attendent généralement à ce qu'une convention d'actionnaires soit en place, couvrant les droits de sortie et les modalités décisionnelles. En l'absence d'un tel document ou s'il est désuet, cet aspect est couramment examiné en vérification diligente. Il peut être utile de revoir l'état actuel de cette documentation avec un professionnel.",
+      q2: "Les registres corporatifs — incluant le registre des actionnaires et la documentation relative à l'émission d'actions — sont typiquement examinés lors de la vérification diligente. En présence d'irrégularités, les acheteurs cherchent habituellement des clarifications avant qu'une transaction puisse progresser. Il peut être utile de vérifier que vos registres sont complets et exacts.",
+      q3: "Les acheteurs évaluent généralement si tous les actionnaires sont alignés sur une vente. Lorsque des actionnaires minoritaires détiennent des droits susceptibles d'affecter une transaction, cela est couramment un point de discussion dans la structuration de l'opération. Il peut être utile de comprendre les droits qui existent actuellement dans votre documentation actionnariale.",
+      q4: "Des états financiers examinés ou vérifiés sont généralement attendus par les acheteurs comme base de la vérification diligente. Lorsque l'information financière est incohérente ou non examinée, les acheteurs peuvent chercher des vérifications supplémentaires. Il peut être utile d'évaluer l'état actuel de vos informations financières avec votre comptable.",
+      q5: "La concentration des revenus est couramment évaluée par les acheteurs comme indicateur du risque d'affaires. Lorsqu'un seul client représente une part importante des revenus, cela est typiquement un point de discussion dans les négociations sur la valorisation. Il peut être utile de considérer comment cet élément pourrait être perçu et comment il est actuellement documenté.",
+      q6: "Les positions fiscales — tant au niveau fédéral (ARC) que provincial (Revenu Québec) — sont typiquement examinées en vérification diligente. Les questions fiscales non résolues sont couramment un sujet de négociation dans les transactions. Il peut être utile de comprendre la nature de toute position fiscale ouverte avec votre conseiller fiscal.",
+      q7: "Les ententes écrites avec les clients importants sont couramment examinées par les acheteurs comme indicateur de la fiabilité des revenus. Lorsque les relations clients ne sont pas documentées, les acheteurs peuvent les percevoir comme moins certaines. Il peut être utile de considérer comment vos relations clients importantes sont actuellement formalisées.",
+      q8: "Les clauses de changement de contrôle dans les contrats importants sont couramment identifiées et examinées en vérification diligente. Leur présence peut affecter le calendrier et la structure d'une transaction. Il peut être utile de passer en revue vos contrats clés pour comprendre si de telles dispositions existent.",
+      q9: "Les litiges actifs ou potentiels sont systématiquement examinés en vérification diligente. Leur présence peut introduire une incertitude que les acheteurs cherchent généralement à comprendre et à intégrer dans les conditions transactionnelles. Il peut être utile de comprendre l'état actuel de tout dossier contentieux.",
+      q10: "Les contrats d'emploi des personnes clés — incluant les clauses de non-concurrence — sont couramment examinés par les acheteurs. Au Québec, la validité des clauses de non-concurrence dépend de critères spécifiques. Il peut être utile de revoir la structure de ces ententes.",
+      q11: "La classification des travailleurs est couramment examinée en vérification diligente, notamment au Québec où la CNESST et Revenu Québec peuvent évaluer la nature des relations de travail. Lorsque des questions de classification existent, les acheteurs cherchent généralement à en comprendre les implications potentielles. Il peut être utile de vérifier comment votre main-d'oeuvre est actuellement classifiée.",
+      q12: "Les acheteurs s'attendent généralement à ce que la propriété intellectuelle soit clairement et formellement détenue par l'entreprise. Lorsque la propriété implique des individus ou des tiers sans documentation écrite, cela peut affecter la structuration de la transaction. Il peut être utile de vérifier comment la propriété de la PI est actuellement documentée.",
+      q13: "Les ententes de cession de droits de PI sont typiquement examinées pour établir une chaîne de titre claire. Lorsque cette documentation est incomplète, les acheteurs cherchent généralement des clarifications supplémentaires. Il peut être utile de vérifier que tous les contributeurs — passés et présents — disposent de la documentation appropriée.",
+      q14: "La capacité d'une entreprise à fonctionner sans son fondateur est couramment évaluée comme indicateur de transférabilité. Les acheteurs portent souvent attention à cet aspect dans les entreprises dirigées par leur propriétaire. Il peut être utile de considérer comment les opérations sont actuellement documentées et comment la continuité est assurée.",
+      q15: "Les ententes avec les fournisseurs et partenaires clés sont couramment examinées pour évaluer la continuité opérationnelle. Lorsque des clauses de changement de contrôle existent, les acheteurs cherchent généralement à en comprendre l'impact potentiel. Il peut être utile de passer en revue vos ententes clés pour identifier les dispositions pertinentes.",
     },
   };
   return { en: actions.en[id], fr: actions.fr[id] };
@@ -737,8 +745,11 @@ function AdvisorSection({ lang }) {
     <div className="mb-10">
       {/* Divider + intro */}
       <div className="mb-10 pt-6" style={{ borderTop: "1px solid #1A1A1A" }}>
-        <p className="text-sm leading-relaxed" style={{ color: "#5A5040", fontStyle: "italic", maxWidth: "520px" }}>
+        <p className="text-sm leading-relaxed mb-3" style={{ color: "#5A5040", fontStyle: "italic", maxWidth: "520px" }}>
           {t.advisorIntro}
+        </p>
+        <p className="text-xs leading-relaxed" style={{ color: "#3A3A3A", maxWidth: "520px" }}>
+          {t.advisorConsultText}
         </p>
       </div>
 
@@ -973,8 +984,7 @@ function QuestionnairePage({ lang, setLang, onComplete, onBack }) {
     if (questionIdx > 0) { setQuestionIdx(questionIdx - 1); return; }
     setShowIntro(true);
   };
-
-  const optStyle = (val) => ({
+const optStyle = (val) => ({
     border: selected === val ? "1px solid #8B7355" : "1px solid #2A2A2A",
     background: selected === val ? "rgba(139,115,85,0.1)" : "transparent",
     color: selected === val ? "#C8A96E" : "#6B6B6B",
@@ -1006,6 +1016,11 @@ function QuestionnairePage({ lang, setLang, onComplete, onBack }) {
             <p className="text-base leading-relaxed mb-10" style={{ color: "#7A6A5A", fontStyle: "italic", borderLeft: "2px solid #2A2A2A", paddingLeft: "20px" }}>
               {t.sectionIntros[section.id]}
             </p>
+            {sectionIdx === 0 && (
+              <div className="mb-8 px-4 py-3" style={{ border: "1px solid #1E1E1E", background: "rgba(139,115,85,0.04)" }}>
+                <p className="text-xs leading-relaxed" style={{ color: "#4A4040" }}>{t.preQuestionnaireDisclaimer}</p>
+              </div>
+            )}
             <button onClick={() => setShowIntro(false)}
               className="px-10 py-4 text-xs uppercase tracking-[0.3em] transition-all"
               style={{ background: "#8B7355", color: "#0D0D0D" }}
@@ -1177,7 +1192,7 @@ function ResultsPage({ answers, email, lang, setLang, onRestart }) {
 </div>
 
 <div class="section">
-  <div class="section-title">5. ${t.valuationImpact}</div>
+  <div class="section-title">5. ${lang === "fr" ? "Observations contextuelles" : "Contextual Observations"}</div>
   <p style="font-size:14px;color:#333;line-height:1.8;max-width:600px;">${t.valuationDesc(score)}</p>
 </div>
 
@@ -1195,7 +1210,8 @@ function ResultsPage({ answers, email, lang, setLang, onRestart }) {
 
 <div class="section">
   <div class="section-title">8. ${lang === "fr" ? "Votre conseiller" : "Your Advisor"}</div>
-  <p style="font-size:13px;color:#666;line-height:1.7;margin-bottom:20px;max-width:560px;">${lang === "fr" ? "Corriger les éléments identifiés dans ce rapport peut améliorer significativement la valeur de votre entreprise et réduire les risques liés à une transaction. Il peut être utile d'en discuter avec un conseiller." : "Addressing the issues identified in this report can significantly improve your valuation and reduce deal risk. You may wish to speak with an advisor to better understand your situation and next steps."}</p>
+  <p style="font-size:13px;color:#666;line-height:1.7;margin-bottom:8px;max-width:560px;">${lang === "fr" ? "Ce rapport présente des considérations générales basées sur les informations fournies. Il ne constitue pas un avis juridique et ne crée aucune relation avocat-client." : "This report presents general considerations based on the information provided. It does not constitute legal advice and does not create a lawyer-client relationship."}</p>
+  <p style="font-size:13px;color:#666;line-height:1.7;margin-bottom:20px;max-width:560px;">${lang === "fr" ? "Pour une analyse adaptée à votre situation, il peut être utile de consulter un professionnel." : "If you would like to discuss your specific situation, you may wish to consult a professional."}</p>
   <div class="advisor-card">
     <img class="advisor-photo" src="${ADVISOR.photo}" alt="${ADVISOR.name}" onerror="this.style.display='none'" />
     <div style="flex:1;">
@@ -1218,7 +1234,7 @@ function ResultsPage({ answers, email, lang, setLang, onRestart }) {
 </div>
 
 <div class="footer">
-  <strong>${lang === "fr" ? "Avis de non-responsabilité" : "Disclaimer"}:</strong> ${lang === "fr" ? "Ce rapport est produit à titre informatif seulement et ne constitue pas un avis juridique, financier ou en affaires. Les résultats sont basés sur des réponses autodéclarées et n'ont pas été vérifiés de manière indépendante. Consultez des conseillers qualifiés avant d'initier toute transaction." : "This report is produced for informational purposes only and does not constitute legal, financial, or advisory advice. Results are based on self-reported responses and have not been independently verified. Consult qualified advisors before initiating any transaction."}
+  <strong>${lang === "fr" ? "Avis de non-responsabilité" : "Disclaimer"}:</strong> ${lang === "fr" ? "Ce rapport est généré automatiquement à partir des informations fournies et est présenté à titre informatif seulement. Il ne constitue pas un avis juridique et ne crée aucune relation avocat-client. Il ne doit pas être interprété comme un avis juridique ou un substitut à des conseils professionnels. Les résultats sont basés sur des réponses autodéclarées et n'ont pas fait l'objet d'une vérification indépendante." : "This report is generated automatically based on user inputs and is for informational purposes only. It does not constitute legal advice and does not create a lawyer-client relationship. It should not be relied upon as legal advice or as a substitute for professional counsel. Results are based on self-reported responses and have not been independently verified."}
 </div></body></html>`;
 
     const w = window.open("", "_blank");
@@ -1243,8 +1259,11 @@ function ResultsPage({ answers, email, lang, setLang, onRestart }) {
             </div>
           </div>
           <p className="mt-6 text-sm max-w-lg mx-auto leading-relaxed" style={{ color: "#6B6B6B" }}>{t.statusDesc(score)}</p>
+          {/* Results disclaimer */}
+          <div className="mt-6 px-4 py-3 max-w-lg mx-auto" style={{ border: "1px solid #1A1A1A", background: "rgba(139,115,85,0.03)" }}>
+            <p className="text-xs leading-relaxed" style={{ color: "#3A3A3A" }}>{t.resultsDisclaimer}</p>
+          </div>
         </div>
-
         {/* Benchmark Insights */}
         <div className="mb-14 p-6 md:p-8" style={{ border: "1px solid #1E1E1E", background: "rgba(139,115,85,0.03)" }}>
           <div className="flex items-center gap-4 mb-2">
