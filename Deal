@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 const ADVISOR = {
   name: "Christophe El-Hamaoui",
   title: { en: "Business Lawyer — Mergers & Acquisitions", fr: "Avocat en droit des affaires — Fusions et acquisitions" },
-  firm: "Lapointe Rosenstein Marchand Melançon (LRMM)",
   photo: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCAFAAUADASIAAhEBAxEB/8QAHAAAAQQDAQAAAAAAAAAAAAAAAAECBAUDBgcI/8QAPRAAAQMDAwIEBAMHAwQCAwAAAQACAwQFERIhMQZBEyJRYQcycYEUQpEIFSNSobHBFtHwJDNi4TRDY3Ky/8QAGgEBAAMBAQEAAAAAAAAAAAAAAAECAwQFBv/EACURAQEAAgICAgIDAQEBAAAAAAABAhEDIRIxBBNBURQiYQUycf/aAAwDAQACEQMRAD8A80oQhUWCEJdKBE4cIAwlQCUJAlCBzRvuEuB6JUoRJAlTtPujSgbj2S4PonDhCBANuEuAhCAQhCAQhCGwlRhKAiBj2QnIwgQBLj2RhKgAEJcIwgTCMeyUJUDcIwngZRpQMwjCcRhCBqQp2EYQNSJ+EhCBmPZIQnpCggJWjKQAp6GiYCVCESEIShEBOABQ0EJ4QGE5o23QAQUqJCEIQCEIQCEDc47qPWVcdKDra5xAycdvqgkpWtJOAsU90t7B/wBEyomidECZZGhpa7bV5R2yq+4V9dDIGxzRaMBzQ0DP391CdbWwY4jUGkt9QE3bOO6qP3tdGDT+PmjjLT5Wuw0fZQ4ZJMafHcSRqG5JBRGmyBLg9uFrLairDnYmdpGwOrss7LpXRNHnDm43DhypRpsKUKqp7y0xBslO7xNzqa7Yj6KfT1cE7QWvAcfyk7hDTNhGE7ScZ7JWjCBoCdgJUIEwEYCVCAAwhCEARlJgJUIGuG2yRPQgYkKeeEmkoGYSFPKaggDYJUIRIQOUoQiAnADlDR6hORICUIAKcBtwgVCEIBCEIjZcbJ8UMkjC8McWjkgZx7/5U/pyz1l7uApaWEvDWmSV2oNbHGPmcXHYADuovVf4GG4VLqG4zxUwLTBTxtc5j2uHm1EYwCNx3d7KtySh0le0VM8UFE6qeGFzJBIWOZj8wA+ZR7hUR0o/AOeHNa4ucQdZyfqO/dRbhegy5iqpKeOnjikJhEXl05xtkHONth2Va17p3mV4JD3E4z37pJancSWNi8QzlzWucd2gcZ7Y9FllkhqaoCNojiaztuTtyo9HF4nLSWCQMc7vvwsJilhc6SBxAjJ0nvhTDa0/BMla6gjcHzAgvk1eVgHIWKqigkY0UTHufG7eQbD3AKj0kj5qcwxNIe8l78fmHJUz8ZJNFFG8BlGxrvDaPYcn3UiqfDPA9heHb/8AN1kJYGEnLsjgHurGM0jYy9zCZDjw2j5cepPf6JtJQvqJ/DgAEjsuIxwPdEIMDXzaIw0lxOk47BSKiEw4HyuGd8YOysGMqbXIZI/C1ZABxkg+3+6wP8apqnGZwdI52cEY39UEqjuOGtZUEn0d7e6s2lrhlrgfoqmWRooxTuYNTM7t9P0SNfNTeDJE4GKRviHJwgt0JIXiWMPA5G4T8eyINS4S49kIEwjCVCBMIwlQgahKUmEAhCECEd01PSOHoEFalASBOQInAYKANt05AAJQN0AFPACJIBhKhCAQhCIKjCUDdbL8NbFFf+raWkqnhlHEfGqnF4aBG3c7njPCi3QtbvS0fR/QgorrcZaasvjBJPFFGQ8RNbqYwn0LnAkdwuadR3uWr8Wm0UrqeSQSGWFrsSvA0h+HHIONuy6H8bK2XrXq+qdaqP8AGQwjTHPENEEMcbMvDScam5wS925XJ6GldJWNhOljJHhrhnjtlZ4+1taNhhjeSyUgEhw4yOOfoskTTDWNiaQW5DwMcf8AMJkw8CuEJdraxzmB2PmGcLNdI5Y30p06HSREcbjBIwVqaZ/ENPVGjeMD8WJSBvluM8+iwxzObT1FQWMDc+YFvYgkKbQW+or5QHSgVDXBpB59j/YJlXR1kkT45YHEvmETdLfmc0YwP7oaRaSamhexzqYugLS13m4J43Vlabcyspa9rMiWKESMbnAIOxWW8UFPQ9M0UTY9NRI8mdruRuQ0f5SQzSU1eImaQ6SDw3gDcSAZGPbb+qEm1ZSQTPMU/hOfBE4A43z6p1JVupm1DyCJC5zOMZGQVJoat0FnqmSNI8SQHA2O+DsfsskFnubos/h5C59P42HDkEgf5Q0wNqpZKqpmd5nlv8HI7nj+6yUIMOusliMhiwBq41E41fZSILTWtuZtzInGXnAPAwpMcXiVf7tfpihIEc0hPyuaMk+/dRVkEiSSOTW90ha9rWNz8xdwslTFWNk0BzA1oDSQScN7jHopdbC1srmQObKQ5jwGgecAbIrWVETJWsiDdTgS5o2I+v1UeQw0tS0VHhRgiLsHHcKxwqJ7XipGoMaRtkZBJ9FbUD3yUwMhaXAkZHsrRXTPhNwnpMKSw3CMJ+EYRGjMIwn4TVCLCIS4RhAwhCckwgRCEIK0cJzU1OahDsJwGUg4TwAESAMIQhAIQlRGwlCEIFC3roCqtVtts1S+2vr7hU+JSRM8TRu9mkEZOABq3z6LRRyuiWC3wM6PMD6e4y1Tg6pLaOIOIbjlzyRoGBt67rLkTi07rgXqO03Knq7qBTUdw0Mo4JfEic9zfOWuHOA1vO2FzsuB1EZYR74WydSyUT6mZ9rjqW0kjw5onfk6sDIPqc539MKpbTCdpAYCffsmKzLbKKatp6gasywtD8fzN7EKbNTm63COR7iwOhMjD6Fow5qx2jxaSaB7wWnQ+JwHp/wqXFDK+JmM6iTlw5zjH9QrXL9LSWsNpqpILvbav1iaZB6lpIP9grlt0FNLTsjja8w1EtQCe7jkNyoDbPOJohpfhp7e6nwWh2pkhDtIfqI9Qq+a3hUO9NcLhTQVD2ySa/Fne7YanHP6cK2bRWoTNqaupa0aXEyNHmf6uH22CrKukqKyslqXxZllfoibjZg9UrLBUyskc7JGzW+zfX+hU+SfFkN16ccQ78HK4iQeHHwxrBxn1J7qwrusaiobO6kphHLIwRseeWN4yFloekGyVxbHC52hj3AFuxO4H+Faw9DzQWx+aWUk+GS7TuRpzj7khR56R4VTS3mGFkVVTMLqllH4MOeS5x3e73wB+qyx/gpbM6hZDGTSxOdJUE4L5nHGx/X9FmPS9TDTw64s1Eri5zuzQ3YH6ZWGst72B1FBG7Q3Q1ricAlvJ/U5S57Jgra6gjt7KYUcsz5ZGHU0ctBGBj35Weqp5KO31Bkja6TRGA55y3I7N9SFKq6KaOoNXMceGwshdnOrbGf+eqxxtaYSDUnzeU6n8e3sq+RcFTeKeKSnpqkS+HmIFzXHdx7nHYptuLGOdG2VrmkBzQP6rNcIqeNmp0cbwdjkk4J9fUe4USifGKloe3SeGkcELSZVnelnhKAhCugIQhEBIRulQgaQjCcjCHRiTCVCIIU3CfhNQVoGVkaM9kyPOVmAwiYQDASoQgEJQjCIASoQgEISgIHxNL5GtGNzjdb7XN/CNZFUCtqbfDFG64U0U/htmZk4AxucEjOffhaRbAHXCAEZGsZW6T0wdDlr5XyP1Ajt5jvk8nYLDlurG/DjuWtQvdPV3yfXMGsYAGRQQsDI2NaMNwB7d+T3WCj6ffHIAM54ct0tfgSCQvY0OaNLcdgOylwUzDUOG3usM+W4urj4ZWsUnTxkIBaXEHZbXZOj4y9r3Mx9leUFLExoIaCr+37aQGgD6Ll5OfLXTt4/jYq6n6Qp3gZjaT22UqXo6lMJYIm7D04W2UDcNVgGB22y5/uydP0YOd03QURqI3tZs0ghbNSdBW/wi1w3eAOBwFscEJ1cZ+6nxteGgBu314Vvvyql4MP0qrJ0jbKeoafCbnOXDHPtlbLUWWgNIYxCMZyBjjZYYi/lpBIU2GfygPAH1VpyZftS8GO/TQequk21oeyPxIs4B0NGMDgLnt76Nkt0hcwMIcMZ0nYenGF6BeIzu3BPc4VVd6WGeIsLVM57ifxsa8y3S3VEeROzcbgl2AB7BVzKMhmZaZ8MZzokIA1Ef3K9C1vSlNO3X4MbT2JC0Tq20UNG2UDZ43cPf1wtuPn87py8vxvCb24/cqF3hlpbnX/K3ynPf2Uano2hrHEtwHYzndv+62GoiZhrWE4yQQTx329lXvZolzG8BpPDv+c+67sa4cojPAa8gcA7JqfMcyuKYtpdxzl7ISIUopUJEIBCEqEIU08pyCMokxIU8gYTSiEBgwE5DeEImhKOUiciAhCEAlGEiECoQClQTLIM3alH/wCQcroM8XgxVLhHq8Q4Azjc+i0Dp8NN6pQ4ZBkC6rR0zHynW4PBOka+AfbC5Oe6yjq4P/LRqEuhrZIw4ELYKF2ZG4WWvsMrZpKyNkhjxhriNjjusNLC9srdY07rm5Hdw+m00DR4Y2V1b2jAGklVVraPDbjlX9CBhceT0MFzQMxgHhTWgjbBGVFojkgAq3ijDmDPdZ620pKMdv1U+Nzc5Oc98qO2PT8owFnhAJAwd1MiEqPwgATyFmPh88p8ULcAenKy/h2bgDdaSVTcQ9DA0kOIwoMuoyeoCsZoQ3IbkFVExc2QjhY5RrhqsNzqNNK7sB3xwuNdbVbZax0hc7u12Rv/AOwuu1o8eN8RackYwuU9YdP17a1zYWOkjPmaSMjHoVv8eyXty/LwtnTnTnvEpZLuGHkBRaprQ/Vlu+wONirS60b2SvABD2HSRnbZVFxf4ULT4YJIyccL1MbuPH5JpHqP+8QsafK7U/V6gJi3xctCEIV0BCEIBCEIBCEIbB4TE9NKFQUIQhQlHKROQCEIQCEIQCUIASoJVnc1l1pXP+UStz+q7NbKRs96jhc7yyStawAZ5xsuJRRyHzsa46TuQOF6J+GMTbhfLLJoJGuJ2ffuT+i5PkdWOv43csdM6g6boX0VPboogxscYztyuJdSww0vUU8DR5Izj6L0DX3OGOvrKmoka2OBrsknYYGSvH/xD6prbjfqs2sPe2SZxc8Dc78BYXHzdOGXh7dCjuEEUYw8LND1JSxlodI1p7nK4jUzdSOiLiJI2j1cB/lVD5a9koM1QSew8TKtPjT81P8AMs9PUlnv9JNnTMwnHYrZqC6Ruia3UMjdeT7LW3ankbJBMTjG7XasrpPQV5raqoEdU93l322O/qsOXg8e5XVxfKuWtx3mOoa5hfq7KK67QUxDnP4PdV9KXy2x5AOQ38vJXHOsq/qCWoeyPXENRwBnYdllx4+XTXk5PGO5t6vogcCZmR6lSqXrK3vc1rpItxv515DuMN+1GSerkjLjw6XGU2hq7jCdDrlCAOPEnAIXV9H+uPL5N36ey/3/AGyZuBURZ7eZNnEczdTHtcMbEFeXLe66VelwudMcbjTNn7bLbunL11PZJgYZXVEJ+aCV+prvp6FZcvB17b8Pyb+nYHtLZiP0SyU7JY8luTjdVvTV+gvsBcGGGoZjxYjy0rYqeLDTn1XH43Gu3ymU6eefiJCae+1UOjSM6hhaTc3MJ0HIcRjC6l8XaQM6hc88PbnBXPaKwXe91vg2yhlqS07uaNh9TwF6fHdYy14vNhfOyKb+oAQt5u/wv6rttrNfJBFMxrdT2RPy9o+ndaMRjldeGeOXquLk48sOspoiEIWrIIQhAIQhAJUiEClJhCEIr0IQgE5IClQCEIQCAhKECpWbuwTgeqRA5UUmt9uqXmkoqiiprXTwNjoqama2ItADnEjJe4jkk55W6/s7QT019NJJKXR07S9hO5LcFaFQ1jJOnrVVPcMvYYX+vlOBldH+B8mnqgsGMOpn7/QLycrl5WV9FlxYfRjniw/EXqCeC4vpo3EMc5+tvs7Zckv72UNE+WBg1n5duFvfxHbp6jqNjjXtn0Wn1UAqCARkK+OWnL4zTTKS3/vihqH1FTJ+NcD4bCcNG233WsmyVX4t8NKJJC7DQ18bg5p778D6rrVJa2gkiJufpup8dsPgnRG0Z5K6Jzyfhj/F8rvbl1bTm3VkLGB+sADxWggZ7g+q3HoKvkkubGOaWkncKVcKMsBa4CQdwW5S9K0QhvMUpADi4begWXJluN+PC45SPSXR1MyS35LcgNWh/E+1SvrHMoosHTnYbronQbh+7ptXytjyCsV9tzax2tuzsHB9sLh7x7ehljL08qTWmaS8/h6qJ+C8iWQ/2Geyqeoukqtl6bUW6GqdG5wfG5sBlH6f7rtPVfTVc2rJkGP5X42wo9ssVwYRmnkkB/NHJ2Xbx8/j24+X4n2flz+1dFVlPZ57jI6SkrZHl8cMmM6e+po4ye3ZbR0S25HQ6dh8Ph8b8nSfVpPZb9bOlzK5rpoHDv598LbqCzQMibG6Fmw22VObm8vwvw/GnH+UDp+jghYJomgOcOy2VhLYcnZY6WiihGGtWSowG4A+q4t7dM6cq+MNM2Wtpy1vnkAaD91tXSrqTp6xw26307JqvTqkdjbUfUqh+LGsRUssbC90cmrAV/0XcrZVUkUUTXRyFvmDxvlbZZaxiOLjtzt00N9fep+qZ66rr5iIw97m6joawZyAOMLkVZI2aqmlY3Ae8uAHbJXXPilPFY7bUU+cVVcSxmg7iP1+648u/wCJh/Xf7eb/ANTklzmE/BpSJ6F2R5WjEJ6aeVKCIQhAIS4KRAJUiEFehCEKE5NSjlAqEIQCUJEBA5KBkJEreFFGwdP3aOKj/dVYNMBkL2SDcscfX2XQ+iLtLY+prG+Zw8OWYQueNwQ7b/K479Fv3w/L7/TssxeG1NPKx9M89t/91x8/DP8A1HpfE+Vl4/Vl6dE+I1tfJcZKp4JHBz9Vq0VBq04b+gXQOriZbaXSnLuCedxytSt7gCMlct/x14ybPoqF7XZLQfqFnmpHGNwA29la0YaWg7FZalrBEfLg87KvllHRMMdNHutM2IHbLiq22+S4RuH8wVv1G7Ac7O3KoLZM2orI9BOzsFXnc7Y61m9H9DbWmRw4c0AKzI253B2VT0G53+nn+oA+uFmraqZj9LRnHJXPnf6uyS2p77dTVsBZUMa4AeirD07HTu1QEtZylpb41jzDLhjxtgq8oq6CRrWg5J9VOFl6RljlEOkoPKA4427KW+mjY0c5/upTTFqB3DvZY6jzdychWuKm91BcMZwNwq+tk0cnkKdKS3IGVS3STDSMlZ3Fa3VV89HFdBUse0ODQCMrDYLJBS+NcHYjip2FzjwNla2Cm1QSTzSaWOJGkDdxWu/GG+T2no6aKMthEo8JjGjdxPJJVuOeWUxTeT6+K5ODdb3ia+dSVVbI8uZrLYh2a0cYVKkLiTud0q9rDHxmnzOeVyttCEIV1COOEYzukcEo4QGPcox7lKhAhGUY9ylQgYeUieeExEK9CEIBKOUiUcoFQhCACXCE4IABCEIFC234TV7Lf1nTSSEBr2PYM93Fp0/1WphOie+KRskTnNe0gtIOCCFTPHyxsX48vHKV3mCqkr7NO2TJlY9wd6+oVNSuDJNJUL4Y9SuulXPbKtgFS+AuEg4fp9vXClyMdDUOB/mK8643C6r18eTHPvFslvlAYNsAKRUPyHZ+yqaCTAG6z1s48I+vOVnXThdNf6gdG+cRHBydwq60U8X7xADdOTnZVXUtZL+P1NfjTlVQv7aB/wCIdIWOad2h2Qfp6FXxxuXpleWS7r010PVMipTETs5mnCn3S4263xGWuqIYWHbU9wC4x0j14wxfiIqpr4tOXZO7fqm/vK19W3Frq6sPiEkRl+7WtB7e/usvqv5dH8nHrTfOpa2mqRHcLbKJAwYeW8FWHTl0EsYy4/dFut9uh6dbRUjo3sAyCCDqPqqGgDqWuMQdtlY67bXPbpjKkPia8u2wsjZteRqAVFbpi6FodyrJjg0AHGCNlqpplqXebPK165OMkjgOyta6cNjwOeypK5/hU0kjiMhpKqzyykbDbgKe0RAFuojOD6lcB+PfUkd1v8dtppA+GjH8Qg5BkPP6LD1H8Tb1PTS22la2mAJjModl2Pb0XPHkvcXvcXOcckk5JPqu343Bcb5V53zPlzLH68TO+yekwEq75HmBCEKQIQhAIQhAIQhAh4TE9I4AIVWoQhEBKOUicgEoCAEoQKEIQgEoQEqAQhCC36PuH7q6lt9eThkcw1//AKnY/wBCuv8AU1K2KoMjCC127SO47LhnLcey7NZLh+++h6Os1aqimHgTjvlvB+4XH8ifl2/Fy/DFSzlrNWVR9UdTRUjPBZI3WQcn0U17yxj254XKuqBLU3d7zkAnt29lhx4TK9uvkzuOPR16v0krXOZ5nE8nstfmmfNl73FxGNlNgpqZ0uieVzHd8sKuqWltLC3RBPO7GPLGSurcx9Rz48WfIpI55YKLRESwEhrsd/qr6zXB8Hgs8+vSdZHGN/8A0tgt1NSVFGYI+nKiXI5MBB+ucqfS9K3aueyak6cdnHlLjgAD6KlynrTox+Dye9i29ZV9JC8wvkboI3xjAPKkW7ruf94+JPpwGjOfzbp1T0X1EIHNNvgje7sZTn+y0m79OX+xztfcKchjj8wyWrKzG+054cvHZt6d6XuEVwt0dREQMt3HoVfiUNj8xB25K5r8IqjxbO15I22wOPqt7BDnLku5XbjlvHZ7nPcST8vbKp+o5MUMzRtpjLnH2AyrWVwZGdRIWu9USmPpi5VR2zC/H0ASe4pnqyvOc79c73n8zif6pgKQ8pWr2cXz19nIQhXQEIQgEIQgEIQgEIQgE1yckOCgrEqRKEQAnDlIlAQKgIASoBCXCVAIQhAJWo0+6UDCBw4W3fDC9Nt93fbqpwFJXjwznhr/AMp/wtRHCNwQQSCOCFTLHyli+GVxsrql1gdDUvaBjcrTXUcUl4e2QDBySMZWy2q7C9WaOWQ6qyACOcdzts77/wB1RyxvjvL3sB0vAzlefjLjbHqWzLGWMVRZ4pJNTGgOb/VXFga2F7A+NuRwSjUC8h3ruq68U9UWumopXBwGdBPJUY5X02wzvH3HSbNW08RLHzRxE74J5AWx2y6tZBimq3Fh40+i8z119urpWapHMkYSPQj1W4dBzX25yRU7JZPCadR+itnhljN7a4f9G5Xx07hStM0wfI/LSc4zuUvWluprjYJopY2EhmQcfKVConGlp2MDi54GBnlR+oK2b93ujeXROf8ALvuVxbyuW9t8+Tc7R/hzTCgsjITpLtzqHcZW1se0NznPYla10zO00OgMcHAZPt2wrOeqbHEMHJ5Vpu1jLJjGauqHTSsgYTlxx9k+92eW82mSy0rmxy1MTo2E+uFgssbnPdVPGS44aPQLfOhbY6pvf4p7SIqRhcT21kYAVuPHz5JGfPfDjtrxhVQS01TLTTMLJInljmkcEHBWJdG/aDsJsnxKr3NYGw1x/Ex443+b+oXO9PuvbvvTwZdwiEIQCEIQCEIQCEIQCEIQIeEiUowgrRwlS4QAiAAnYQEoCBMJQlSgd0CJwG3CVCBMD0RgeiVCAQlwgBADhBS42Sgb4UJjbvhVbpq6/TH5aZlO4TvPAzs0fXPCkdVUklsrfDeSCx2ATvn3Uxkv+lvhZQ17fLPcKz8S89yxjtLR9NiVtnWNvivPThq6aNslQIxJEe5aRkrh5cv7vQ4Mf6NDp6mF7w1zw3SN91lgc2eUBrsNK0WpqJqap8F+qN7j59XI9lKp+oDC0jOkkbFPqWnM2Cr6XNfczJhgaPMd+2d11H4cU1HRUGTG1uv8xXMbX1JEGOY+Tcsw7fsrFvVzIcsjeMaMAavZU5MMspprx8mGN27XVy0Ph6onNEgHPuQtC63uGqSB7ZMg76R7crUI+s5i7Q+QuLuG+226p+qeofxFY6OHzAOyC31I3WWHDca0z5scp06F0pfGmeWKN2rDMOB9StjoGPqptTzhq0b4d2eZlN+Oq2lskm2nHbZdb6SslbdaptJRQ6ncucfljHq4/wCFXOd6wWwnXlms+m7ZPW1UdNTx6pHfKDw0epXXbTa4rTbG0kXmd80j/wCZ3qjpix0liovChbrncP4kxG7j6ew9lYzcL0fjfG+qeV9vM+X8q8t1PTzp+15ZWy2C3XqMASU0/guPq144/ULzTqDmBw4K9P8A7X91ipel7faA4eNVVPi49GsG/wDUry1Tvw90fvkLvyx/rtw43V0y7JE9Jj3WDU1CfpKTSUDUJ2kpDsVIRCVCaNEQlQQmjREIwjCgV4SpcJQMoqQBOA3SgbJUCYCVCVrS44aCfogQJcLE+doeWxgvI2JHAStna3csLj7FXmGVnSNxl0hIW+6I587/AIcAe5Tn1Axs2Nn9VP15I8oAB6pQO4UaWsjhbknV7KHLXvccA4HoO6XD9p8lqdA+aRrf7pYSySQNi1SO9uFX0cFRWSCJjHFzzsBz91sNxpY7BS0tA0tddK6RsTWj/wCsOIGfruoskiJa3n430X4L4eWSkA/+NbYHH77n+6sfh1dm3HoW2Sudl7YvAePdpx/ZXnx+s/iWptE0bNoGwj6taMf1C478ILu+Gzz0DnEGOYnB7ZXnc2O8dvS4MtWRsnVnTdLcKqQ48OUZLXN2/Vc6vPT10oH4NO+WMfna0ldcmn/EFrm/MOSe6m0Q1Mw9oKzw5rj7a5cOOTglMKmGVzXRSEv8uMbhLVzVOtsZaQRsDg7Lvr6WlD9baOAPduXBgySsJt9F4ms0dPrxsTGFe/Jx/Sn8W/txm0W673GVgpoZXlu+f/a6N0l0OylqWVtye2onByI8eRp9z3W3WqikrK1tFQU/jy/yxNwG+5PYLr/RPQlPSFlVdC2onGC2IDyM/wByo3yct1jNF+vh7y7UfQfRNbeCyoqQaSiDvnLcOeP/ABH+V26wWuhtNGyloYGxRt9OSfUnuVgpGNjaAAMKxicNIC7OHgx4p04+b5OXL/8AEknZR6l7Y43SPcGtaCS48ADusuoEbLiv7U/Xn+m+kv3Fb59NyuoLPKd44fzO+/AXRJu6c+9PPvx66z/1l1/V1VPJqoKX/p6TPBaDu77lc7dnIcDgg8pz3emyTI9V06mtMd67SIqhrxu0gjlZ2FrmkggqvIcDrYcOWEzSa850u9Qs8uGX00nJVtjCM7rDSVAmGl2zx/VSNPHqueyy6rSGpDysm6aQcqEmoTiCEhCI3SJMJcIwhukRgJUInaABslAwlHCMIgJQMoCUDJwgdTwvmkEbBkn+gUWrqxUVhtlucfDYf+on9fYJ3UtcbVbhRwnFXUgaiOWN9FiscDaOja0YL5N3lbYzSt7T20zGsEUbQ2No2wsdT4VMzLsZS1NaI2aW7LX66rfNIRk4V/JTSTNXEuODgdgostUSeTlRdRShpO6p5VbpkiE9VII4QXOP6BW1rtr56ttJStM0x+eTGzfok6cDXw1MOWscceY9gtittRFRRfh6HyNIzJIfnd/sFGza3gfb+l7eZPJNV45/lK134dOm6t+MtgiqDra+4McR/wCLTq/wqLq65GWTwA7b0W0/suRmT41Wd+nIibK/6eQqmfpbH29I/FVraqoczAyCcZXl+7U8vSXWc2ARS1TvEbttudx9ivSnXk+u8SNJyuddddLR9R2gsiIZVR+aF/ofT6Lms3i6sM9ZKW3VbJmNljeNJ3V5T18MbMufhcstFbWWaqlt9fG6N0Z0ljvy+62i1x1t8qhTW6N0r3cn8rR6krkvFd6dk5JJtslV1BTRbNOp3bHdX/SXS196je2orXPt9Edw3/7Hj/H1Vt0J0BR257KuvxV1nOXDys+gXV7RSgAYbhdHF8We8nNzfKt6xHSXT1BZ6NlPRU7YwOTyXH1J7rb6WPGxUaigDWhWTMNG/K7JJOo4rbbus0Yw1SGHA3UUSNAWOara0bOH6qUHX29UdntFVcauVsUFNG6SR7jgAALwX8SOq6zrTq+uvtU4hsry2Bmdo4wfKP0XYv2quvzJFF0dbZ/n/i1rmn8v5Wffn7Lzw04GFvxTU2zypHnzcFKACUh3KVpAO60VPYOyj1IHigD03WUuG+CoXjF8znDBbnb6ImTaQAchzdiOCpUFeANMzSD6hQ45WnYjCyPAcMjCplhMvaZlcVrHIyRuWODh7FPVI0OY7UwuafUKdS1mXeHNgHsexWOXF49xeZyphGUmlO7ZRkeyxXNIwE1PIygAKQzCQhOwUYKCCAlwlanYQMws9G1rXunk/wC3C3W4/RMwoXUdUaWyGJpw6odg/QK2E3Vb6UDp5LpfJKqXcF2foFcunEbMDnsqazN0BzuM7qVM8F3stdqirqHEHfcqGAXJX5kk9QFlDB7qBiazdSvA0NaZnBmeBnc/ZPpmNDjM8eSPf6n0WASOnqTI7c5/RBYtcyKJsFJH53bvee6mveyhoHPc7JxlxPLj6KPa4XSSZPAVf1VWtfIKWI+VnKCkqpn1FQ6R25cV3v8AZLsRh6oF1mZhxhfpPoMYXGul7RJcawODP4bT+pXqL4VuoOlOn6++Vzmsgp4RFGOC92NwFjy5dajTCJ3Xbo6atmrauWOCEEnVI4NC5refihYrZHiijkuMnA0+VmfqVT/EG7VHUtPNfbhJI9plcKeAfIyMdwO5778LkNcWvqXGIHDzsCclRjh122s68q6ZXdT2XrGup4r3RNtUhkDWVcLtRAPZwxuPdd96O6bt9qtkMNtiY2EtB1Dcv9ye68gGmrqWnDJoZAw+ZpGOPquu/A34qnp+qisXUJcbO8hsU7sk0zj6n+Q/0Vph+Yrybmo9K26nPlGFtdqpCGgkKBaaeKZkVRTvZLDI0OY9pyHA8EFbTRwaWBTGJI48AABPLHKQ2LjZOMe/CkVs7ZBsMrWOt7mLLYqqunfoZDGXuOewW7SNaAXEbYXmv9rPq3w46fpaikxJOPFqsHhn5W/c7/ZWxm7pFunn283Se9Xqsu1S8mSqlMhz2BOw+wWDsNlEkPgvyD5Hc/8AifRSmkaAcrp/xnQTgcLHI8BLIdIzkqMSXux6og6V5bE5w5IwFHgGGp9W7+I2NvDRv9SkYMBFsT+yVri3cEhNKENJDJwR5xj6LKQx7eM/RQ0rXuacgqVJ0mtmmiADZHEDsd1IjrwSBLHj3G6gtlaR5tikeIyMhwCpcJe2kyXUT2SDLHByfjK18PewgtLs+ylwV87Th7NY9xgrDLhv4Wmc12tMIWKGrhl2zpPo7ZZiFnZZ7X2hBuyXCeB2S6PdNBgC1rrKcvrIoAfLG0D7raQ3C0q9u8S8SnnDtlfCdK1mo/JAke7IJKfE3+GMpHR6iGj1WmuldClYcZws7276RypMMQhhL3bKK+TQ107u2zfcp6GOtk0gU7XbN3PuUUY1OwBkqCHFzsnklX3T9PrmDiNgqpTqiZtttTpCAHvGGhapSU09xr2QxjVLK7f/AHVl1NVioq/BYcxxbfdbx8Jumi+F91njBL9o8jhvql9Ji96R6fjoqWCFjMu2Gccn1WXra5zV5is1I7FDSfMRxI/ufdbQITAQ5mWkDGyoLnTRMa4MYG79lj/tayOf/EOWWKC3W6CU7U4c5oOMA52WqUtsDtL3PLnb6gGnDT6E91a9b1L5+rpfDGr8PpYMb/KP7LPQhniF1Y6QRyA5bGQDnsccYWuOFs1trMsd+ViK6lfTP8Gqc5wbh7QTkY7bq4pvwZoXzSCB743jMbm/M0jkDHCrah8byylaQ17sDVnZvrlWMHTNXc6gRWQ1E1OWgyPc3SAe4C1ysxmtM8d+Vy3uOofs+fFSq6YuTunroX1PTo+WVxwabPdueW/+K9hWeroblb4a+3VEdTSzNDo5WOBBC8EQ9O1Vsa2KSAgN5wCV0b4Tdf3bomtEcbn1FskI8alcdvq30K5/SmW8u3r8NSOwFVdMdRWvqW1R3K01LZYnDzN/Mw+hHYqZV1DYY3Pe4AAcnspUU/WN9orBYqq5V0ojhgjLnHPPsPdeCesb9VdSdS116q3HXVSlzWk/K38rfsF3P9qzq5zqWnsMMvmqD4kjQfljB7+5P9AvOhOStuLHU2zzK7DmlrxlpSRPLT4T3ZP5T6hY3ORpEgDCcHsVqqfK8euUyIYfuO6rZa6XW5kVLI8tOCTsEsU9e52XRxRt78kptOmY+aRzj3KzDOyxsasgQlL3QhBUJ2EJyADn2UqkQ0kHIKXCQg5QZBMRyE5sjHcux7LBhK1vdBI0g5LTlZ6apmh2IL2jsVGh+byjV79lMYxoAMhLvUEqLjMvZMtJqAlaMnhZmxjnC5HQxBvkJ9loko8W6yEb+c/3W/vaNDvoVo9uh8Wvnk3IBK1wnSt9pLmHjClW+k1uLjwOU6GDVKG4ypte8UtK2nj+d25wtPFTavuL/Ek8GPgeiq7jJ/EELDlrNj9e6syGwwPndyBkfVUWSTk8lVyTKfTDLwCtnc8W2zF52lmGG+oVR0/Sfia1uR5WnJKy9Q1X4quc1h/hxeVuFVMHTNnnvt4jpI87nVI70C9G9NWhtDbGwBgaGtxgLQvg/YpaGmbWzRYkqBqOeQOwXYaZodCDjss8uyNcq48LT+q6mOipJZ5ZPDYxpJd79lvl1j0OI/Rcm+LUwbR00TxlskwLmZxrAVdb6b4tI6anlfeX1Z8KaaR5B/EN8rs+voru6wuqKwGWi/DQsbgyQ4LC8ncl3Zvp6KjtcZguTI3DTFISASfl74P09VsF+/FU1OI5BIGSjB3yHcHA9u+PddWOM3LCclxwszjoPwq+HUXUAbcHwObQNJAlcd5d/wAvoF2+m6WoLbQCGmpY42NGGgBRfgDSRx/CuxDA3gLj93FbjXOa9wY35WrHK23tlb5fjTRqrpeCfOYgc87Kiunw+hmBdCzQ/sQuqQsbp4T/AA2fyhZ3tLi9kour+i7mK60l72588YyWyN9CO/1XW6nqWquViirq2ldQnRqfC875x39lLfHGATobn6LmXx3v7rP0ZVujkLZpx4MW++Xen2UzHd1EWvPfxEv0vUXWFfcnPLmGQxw5PDG7D/da6444TI9h9EpOd12epphbs08ZSxktKaTyEo2wgdNGH+Znzdx6qOwEE5Upp0guJwAM5UbXreXYwSgd3z7IZxskJRHxlQHOz3RtjKHIAy1AoThznsmjATlIUJCDkJRynAZOSgQA/ZNcS5/hs3xyf8J0z/DYXc42A9UtIzDMn5juVKKzwtDBuMbIc7dJq903O6lW3a7YDqJxssw4TWNwFlDdguJ1VFuMvgUr3AbkEBahYN/xDuweSVtd9b/0q1OyEBlSBz4i2w9M8l/bA1uuocPKAoDnOnmdK7udh7KXO/w6JkLeX7FYQwDDRz3WisVt5ePCZED8xyfsqsDJwFLur9dY/B2b5Qi0UzqusZGByVnfa+l1RYt1jfORiabysyjoayuvfUcFO4EwtPiSn2Hb7qP1BUtkqW00f/agGBj1XX/gp00aS0Nr5mHxqoh+/ZvYKLdQb7a6COGma1rA0YAG3AVjECxunKkRwhrMLBUeUZHKx2uqr+QIXP2yBvn0Xnjru+OqOoZHxuAEeWRnkAdzgro3xZ6qDKg2WklAMbPEqz//ACz78lckqKqiqqKKF2YnmQCZ/JPO49N9lOPXdjTjnlvstnLxWR1DWOcBgNJ5z6rc7nVtuToJaxoJ4ceBnIwdlV0dBDBSEQU/izAeLJMXHZmMFvpsd9lJlhhbIG08rpmvjBJLSAH+gXVjMck5zl4sNXt6x+F4FD8OLNEIxGG0w0t04xknsr5m/O5Ubpi1Ppul7RSOPnho4mvz/NpGVbtow0ZJJXNl7Y27R4x2WZsTnDjA9VnayNn5R90OlaOFUQ6oMhic4ngbryx+0f1Cbj1NT2iN2YqRut4B21u4/QL0Z1lcm0NtnqJZNLGMLnH0AGSvFd7r5Lteqy5SE6qiVzxnsM7D9Fpx47u1cvSLnbHokz7IOyxuPZdDMpPsnBY/7p+dLdZ4aN0BO4kCNp53d/smgABY4yScu5JyVl5QI5EXH3SO42REd8IHuwhhQfZID7oHDY7hKdyE0HZLlA8HA90oOxyQm5+ixTy+GwuO6Gg4+NNpB8rOfqpYOGgDCi0zRHHjudys4Oe2FMRTkPOluSkBxnKZJmUhjeO6InT/2Q==",
   bio: {
     en: "Christophe advises business owners and entrepreneurs on mergers, acquisitions, and corporate transactions. He regularly assists clients in preparing their businesses for sale, conducting legal due diligence, and navigating complex deal structures under Quebec civil law. He holds a certificate in Negotiation Mastery from Harvard Business School Online.",
@@ -82,7 +81,6 @@ const T = {
     advisorBookBtn: "Book a 15-minute call",
     advisorBookSubtext: "A short call to walk through your results and identify practical next steps before going to market.",
     advisorProfileBtn: "View Full Profile",
-    advisorAt: "at",
     advisorBarLabel: "Bar Admission",
     advisorLangLabel: "Languages",
     aboutAdvisorTitle: "About the Advisor",
@@ -160,7 +158,6 @@ const T = {
     advisorBookBtn: "Réserver un appel de 15 minutes",
     advisorBookSubtext: "Un court appel pour revoir vos résultats et identifier les prochaines étapes avant une éventuelle transaction.",
     advisorProfileBtn: "Voir le profil complet",
-    advisorAt: "chez",
     advisorBarLabel: "Admission au barreau",
     advisorLangLabel: "Langues",
     aboutAdvisorTitle: "À propos du conseiller",
@@ -462,9 +459,9 @@ function getRiskFlags(answers) {
 
 function getStatus(score, lang) {
   const t = T[lang];
-  if (score >= 80) return { label: t.dealReady, color: "#2D6A4F", bg: "#0A1F14", accent: "#52B788", border: "#1A4D2E" };
-  if (score >= 60) return { label: t.moderateRisk, color: "#C8860A", bg: "#1A1100", accent: "#F4A261", border: "#3D2800" };
-  return { label: t.highRisk, color: "#E63946", bg: "#1A0000", accent: "#E63946", border: "#3D0000" };
+  if (score >= 80) return { label: t.dealReady, color: "#52B788", bg: "#0d2318", accent: "#52B788", border: "#1a4d2e" };
+  if (score >= 60) return { label: t.moderateRisk, color: "#F4A261", bg: "#1d1508", accent: "#F4A261", border: "#3d2a08" };
+  return { label: t.highRisk, color: "#E63946", bg: "#1d0808", accent: "#E63946", border: "#3d1010" };
 }
 
 function getPercentile(score, lang) {
@@ -541,7 +538,7 @@ function getRiskActions(id, lang) {
 // ─── COMPONENTS ───────────────────────────────────────────────────────────────
 function LangToggle({ lang, setLang }) {
   return (
-    <div className="flex items-center gap-1" style={{ border: "1px solid #2A2A2A", padding: "4px" }}>
+    <div className="flex items-center gap-1" style={{ border: "1px solid #2d3d54", padding: "4px" }}>
       {["en", "fr"].map((l) => (
         <button
           key={l}
@@ -549,7 +546,7 @@ function LangToggle({ lang, setLang }) {
           className="text-xs uppercase tracking-widest px-3 py-1 transition-all"
           style={{
             background: lang === l ? "#8B7355" : "transparent",
-            color: lang === l ? "#0D0D0D" : "#4A4A4A",
+            color: lang === l ? "#0D0D0D" : "#5a6b7e",
           }}
         >
           {l}
@@ -562,7 +559,7 @@ function LangToggle({ lang, setLang }) {
 function AppHeader({ lang, setLang, onRestart, showBack, onBack, showRetake }) {
   const t = T[lang];
   return (
-    <header className="flex items-center justify-between px-6 md:px-8 py-5" style={{ borderBottom: "1px solid #1A1A1A" }}>
+    <header className="flex items-center justify-between px-6 md:px-8 py-5" style={{ borderBottom: "1px solid #1e2d40" }}>
       <button onClick={onRestart} className="flex items-center gap-3 hover:opacity-80 transition-opacity">
         <div className="w-5 h-5" style={{ background: "#8B7355" }}>
           <svg viewBox="0 0 24 24" fill="none" className="w-full h-full p-1">
@@ -573,10 +570,10 @@ function AppHeader({ lang, setLang, onRestart, showBack, onBack, showRetake }) {
       </button>
       <div className="flex items-center gap-4">
         {showRetake && (
-          <button onClick={onRestart} className="text-xs uppercase tracking-widest hidden sm:block" style={{ color: "#4A4A4A" }}>{t.retake}</button>
+          <button onClick={onRestart} className="text-xs uppercase tracking-widest hidden sm:block" style={{ color: "#5a6b7e" }}>{t.retake}</button>
         )}
         {showBack && (
-          <button onClick={onBack} className="text-xs uppercase tracking-widest" style={{ color: "#4A4A4A" }}>{t.back}</button>
+          <button onClick={onBack} className="text-xs uppercase tracking-widest" style={{ color: "#5a6b7e" }}>{t.back}</button>
         )}
         <LangToggle lang={lang} setLang={setLang} />
       </div>
@@ -597,7 +594,7 @@ function TooltipIcon({ text }) {
       >?</button>
       {show && (
         <div className="absolute z-50 left-7 top-0 w-72 p-4 rounded-sm shadow-2xl text-sm leading-relaxed"
-          style={{ background: "#161616", color: "#C8B99A", border: "1px solid #2D2D2D", fontFamily: "Georgia, serif" }}>
+          style={{ background: "#1a2234", color: "#d4c5a9", border: "1px solid #2D2D2D", fontFamily: "Georgia, serif" }}>
           <div className="text-xs font-semibold uppercase tracking-widest mb-2" style={{ color: "#8B7355" }}>
             {show}</div>
           {text}
@@ -616,7 +613,7 @@ function ProgressBar({ current, total, lang }) {
         <span className="text-xs uppercase tracking-widest" style={{ color: "#8B7355" }}>{t.progress}</span>
         <span className="text-xs" style={{ color: "#8B7355" }}>{current} {t.of} {total}</span>
       </div>
-      <div className="h-px w-full" style={{ background: "#2D2D2D" }}>
+      <div className="h-px w-full" style={{ background: "#3d4f62" }}>
         <div className="h-px transition-all duration-700 ease-out"
           style={{ width: `${pct}%`, background: "linear-gradient(90deg, #8B7355, #C8A96E)" }} />
       </div>
@@ -631,14 +628,14 @@ function ScoreRing({ score, accent }) {
   return (
     <div className="relative inline-flex items-center justify-center">
       <svg width="140" height="140" viewBox="0 0 140 140" className="-rotate-90">
-        <circle cx="70" cy="70" r={r} fill="none" stroke="#1A1A1A" strokeWidth="8" />
+        <circle cx="70" cy="70" r={r} fill="none" stroke="#243044" strokeWidth="8" />
         <circle cx="70" cy="70" r={r} fill="none" stroke={accent} strokeWidth="8"
           strokeDasharray={circ} strokeDashoffset={circ - (anim / 100) * circ}
           strokeLinecap="round" style={{ transition: "stroke-dashoffset 1.5s cubic-bezier(0.4,0,0.2,1)" }} />
       </svg>
       <div className="absolute text-center">
-        <div className="text-4xl font-light" style={{ color: "#E8DCC8", fontFamily: "Georgia, serif" }}>{score}</div>
-        <div className="text-xs uppercase tracking-widest" style={{ color: "#6B6B6B" }}>/ 100</div>
+        <div className="text-4xl font-light" style={{ color: "#f1e8d8", fontFamily: "Georgia, serif" }}>{score}</div>
+        <div className="text-xs uppercase tracking-widest" style={{ color: "#8896aa" }}>/ 100</div>
       </div>
     </div>
   );
@@ -651,10 +648,10 @@ function CategoryBar({ label, score }) {
   return (
     <div className="mb-3">
       <div className="flex justify-between mb-1">
-        <span className="text-xs" style={{ color: "#9A8A7A" }}>{label}</span>
+        <span className="text-xs" style={{ color: "#a89a8a" }}>{label}</span>
         <span className="text-xs" style={{ color }}>{score}%</span>
       </div>
-      <div className="h-1 w-full rounded-full" style={{ background: "#1E1E1E" }}>
+      <div className="h-1 w-full rounded-full" style={{ background: "#1e2d40" }}>
         <div className="h-1 rounded-full transition-all duration-1000 ease-out" style={{ width: `${anim}%`, background: color }} />
       </div>
     </div>
@@ -669,8 +666,8 @@ function AdvisorPhoto({ size = 96, rounded = false }) {
         width: size, height: size, flexShrink: 0,
         borderRadius: rounded ? "50%" : "4px",
         overflow: "hidden",
-        border: "1px solid #2A2A2A",
-        background: "#1A1A1A",
+        border: "1px solid #2d3d54",
+        background: "#1a2a3a",
       }}
     >
       <img
@@ -689,31 +686,31 @@ function LandingAdvisorCard({ lang }) {
     <div className="relative z-10 w-full max-w-3xl mx-auto px-6 pb-20">
       {/* Section divider */}
       <div className="flex items-center gap-4 mb-10">
-        <div className="flex-1 h-px" style={{ background: "#1A1A1A" }} />
-        <span className="text-xs uppercase tracking-[0.35em]" style={{ color: "#3A3A3A" }}>{t.aboutAdvisorTitle}</span>
-        <div className="flex-1 h-px" style={{ background: "#1A1A1A" }} />
+        <div className="flex-1 h-px" style={{ background: "#1a2a3a" }} />
+        <span className="text-xs uppercase tracking-[0.35em]" style={{ color: "#4d5f72" }}>{t.aboutAdvisorTitle}</span>
+        <div className="flex-1 h-px" style={{ background: "#1a2a3a" }} />
       </div>
 
       <div className="p-6 md:p-8 flex flex-col md:flex-row gap-6 md:gap-8 items-start"
-        style={{ border: "1px solid #1A1A1A", background: "rgba(139,115,85,0.02)" }}>
+        style={{ border: "1px solid #1e2d40", background: "rgba(139,115,85,0.05)" }}>
 
         {/* Photo + firm */}
         <div className="flex flex-col items-center gap-3 flex-shrink-0">
           <AdvisorPhoto size={88} rounded={true} />
-          <div className="text-xs text-center" style={{ color: "#3A3A3A", letterSpacing: "0.05em" }}>LRMM</div>
+
         </div>
 
         {/* Info */}
         <div className="flex-1 min-w-0">
           <div className="mb-3">
-            <div className="text-lg font-normal" style={{ color: "#C8B99A" }}>{ADVISOR.name}</div>
+            <div className="text-lg font-normal" style={{ color: "#d4c5a9" }}>{ADVISOR.name}</div>
             <div className="text-sm mt-0.5" style={{ color: "#8B7355" }}>{ADVISOR.title[lang]}</div>
           </div>
-          <p className="text-sm leading-relaxed mb-5" style={{ color: "#5A5040", maxWidth: "400px" }}>
+          <p className="text-sm leading-relaxed mb-5" style={{ color: "#7a6a58", maxWidth: "400px" }}>
             {t.aboutAdvisorBio}
           </p>
-          <div className="text-xs mb-5" style={{ color: "#3A3A3A" }}>
-            <a href={`mailto:${ADVISOR.email}`} style={{ color: "#5A5040", textDecoration: "none" }}>{ADVISOR.email}</a>
+          <div className="text-xs mb-5" style={{ color: "#4d5f72" }}>
+            <a href={`mailto:${ADVISOR.email}`} style={{ color: "#7a6a58", textDecoration: "none" }}>{ADVISOR.email}</a>
           </div>
           <div className="flex flex-col sm:flex-row gap-3">
             <a href={ADVISOR.profileUrl} target="_blank" rel="noopener noreferrer"
@@ -725,9 +722,9 @@ function LandingAdvisorCard({ lang }) {
             </a>
             <a href={ADVISOR.profileUrl} target="_blank" rel="noopener noreferrer"
               className="inline-flex items-center justify-center px-5 py-3 text-xs uppercase tracking-[0.25em] transition-all"
-              style={{ border: "1px solid #2A2A2A", color: "#5A5040", textDecoration: "none" }}
-              onMouseEnter={(e) => { e.currentTarget.style.borderColor = "#5A5040"; e.currentTarget.style.color = "#8B7355"; }}
-              onMouseLeave={(e) => { e.currentTarget.style.borderColor = "#2A2A2A"; e.currentTarget.style.color = "#5A5040"; }}>
+              style={{ border: "1px solid #2d3d54", color: "#7a6a58", textDecoration: "none" }}
+              onMouseEnter={(e) => { e.currentTarget.style.borderColor = "#7a6a58"; e.currentTarget.style.color = "#8B7355"; }}
+              onMouseLeave={(e) => { e.currentTarget.style.borderColor = "#2d3d54"; e.currentTarget.style.color = "#7a6a58"; }}>
               {t.advisorProfileBtn} →
             </a>
           </div>
@@ -744,11 +741,11 @@ function AdvisorSection({ lang }) {
   return (
     <div className="mb-10">
       {/* Divider + intro */}
-      <div className="mb-10 pt-6" style={{ borderTop: "1px solid #1A1A1A" }}>
-        <p className="text-sm leading-relaxed mb-3" style={{ color: "#5A5040", fontStyle: "italic", maxWidth: "520px" }}>
+      <div className="mb-10 pt-6" style={{ borderTop: "1px solid #1e2d40" }}>
+        <p className="text-sm leading-relaxed mb-3" style={{ color: "#7a6a58", fontStyle: "italic", maxWidth: "520px" }}>
           {t.advisorIntro}
         </p>
-        <p className="text-xs leading-relaxed" style={{ color: "#3A3A3A", maxWidth: "520px" }}>
+        <p className="text-xs leading-relaxed" style={{ color: "#4d5f72", maxWidth: "520px" }}>
           {t.advisorConsultText}
         </p>
       </div>
@@ -756,15 +753,15 @@ function AdvisorSection({ lang }) {
       {/* Section label */}
       <div className="flex items-center gap-4 mb-8">
         <h2 className="text-xs uppercase tracking-[0.3em]" style={{ color: "#8B7355" }}>{t.advisorSectionTitle}</h2>
-        <div className="flex-1 h-px" style={{ background: "#1E1E1E" }} />
+        <div className="flex-1 h-px" style={{ background: "#1e2d40" }} />
       </div>
 
       {/* 15-min call primary CTA — above the card */}
       <div className="mb-6 p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4"
-        style={{ border: "1px solid #2A2A2A", background: "rgba(139,115,85,0.05)" }}>
+        style={{ border: "1px solid #2d3d54", background: "rgba(139,115,85,0.08)" }}>
         <div>
-          <div className="text-sm mb-1" style={{ color: "#C8B99A" }}>{t.advisorBookBtn}</div>
-          <div className="text-xs leading-relaxed" style={{ color: "#5A5040", maxWidth: "380px" }}>{t.advisorBookSubtext}</div>
+          <div className="text-sm mb-1" style={{ color: "#d4c5a9" }}>{t.advisorBookBtn}</div>
+          <div className="text-xs leading-relaxed" style={{ color: "#7a6a58", maxWidth: "380px" }}>{t.advisorBookSubtext}</div>
         </div>
         <a href={ADVISOR.profileUrl} target="_blank" rel="noopener noreferrer"
           className="inline-flex items-center justify-center px-7 py-3 text-xs uppercase tracking-[0.25em] transition-all flex-shrink-0"
@@ -776,34 +773,34 @@ function AdvisorSection({ lang }) {
       </div>
 
       {/* Advisor card */}
-      <div className="p-6 md:p-8" style={{ border: "1px solid #1E1E1E", background: "#0F0F0F" }}>
+      <div className="p-6 md:p-8" style={{ border: "1px solid #243044", background: "#161f30" }}>
         <div className="flex flex-col md:flex-row gap-6 md:gap-8">
 
           {/* Photo */}
           <div className="flex-shrink-0 flex flex-col items-center md:items-start gap-3">
             <AdvisorPhoto size={96} rounded={true} />
-            <div className="text-xs text-center md:text-left" style={{ color: "#3A3A3A" }}>LRMM</div>
+
           </div>
 
           {/* Info */}
           <div className="flex-1">
-            <h3 className="text-xl font-normal mb-0.5" style={{ color: "#E8DCC8", letterSpacing: "-0.01em" }}>
+            <h3 className="text-xl font-normal mb-0.5" style={{ color: "#f1e8d8", letterSpacing: "-0.01em" }}>
               {ADVISOR.name}
             </h3>
             <p className="text-sm" style={{ color: "#8B7355" }}>{ADVISOR.title[lang]}</p>
-            <p className="text-xs mt-0.5 mb-4" style={{ color: "#3A3A3A" }}>{t.advisorAt} {ADVISOR.firm}</p>
 
-            <p className="text-sm leading-relaxed mb-5" style={{ color: "#6B5B4A", maxWidth: "480px" }}>
+
+            <p className="text-sm leading-relaxed mb-5" style={{ color: "#8a7a65", maxWidth: "480px" }}>
               {ADVISOR.bio[lang]}
             </p>
 
             {/* Expertise pills */}
             <div className="mb-5">
-              <div className="text-xs uppercase tracking-widest mb-2" style={{ color: "#3A3A3A" }}>{t.advisorExpertise}</div>
+              <div className="text-xs uppercase tracking-widest mb-2" style={{ color: "#4d5f72" }}>{t.advisorExpertise}</div>
               <div className="flex flex-wrap gap-2">
                 {ADVISOR.expertise[lang].map((item) => (
                   <span key={item} className="text-xs px-3 py-1"
-                    style={{ border: "1px solid #2A2A2A", color: "#5A5040" }}>
+                    style={{ border: "1px solid #2d3d54", color: "#7a6a58" }}>
                     {item}
                   </span>
                 ))}
@@ -811,25 +808,25 @@ function AdvisorSection({ lang }) {
             </div>
 
             {/* Meta */}
-            <div className="flex flex-wrap gap-x-6 gap-y-1 mb-5 text-xs" style={{ color: "#3A3A3A" }}>
-              <span>{t.advisorBarLabel}: <span style={{ color: "#5A5040" }}>{ADVISOR.bar[lang]}</span></span>
-              <span>{t.advisorLangLabel}: <span style={{ color: "#5A5040" }}>{ADVISOR.languages[lang]}</span></span>
+            <div className="flex flex-wrap gap-x-6 gap-y-1 mb-5 text-xs" style={{ color: "#4d5f72" }}>
+              <span>{t.advisorBarLabel}: <span style={{ color: "#7a6a58" }}>{ADVISOR.bar[lang]}</span></span>
+              <span>{t.advisorLangLabel}: <span style={{ color: "#7a6a58" }}>{ADVISOR.languages[lang]}</span></span>
             </div>
 
             {/* Secondary contacts */}
             <div className="flex flex-col sm:flex-row gap-3">
               <a href={`mailto:${ADVISOR.email}`}
                 className="inline-flex items-center justify-center px-5 py-2.5 text-xs tracking-wide transition-all"
-                style={{ border: "1px solid #2A2A2A", color: "#6B5B4A", textDecoration: "none" }}
+                style={{ border: "1px solid #2d3d54", color: "#8a7a65", textDecoration: "none" }}
                 onMouseEnter={(e) => { e.currentTarget.style.borderColor = "#8B7355"; e.currentTarget.style.color = "#8B7355"; }}
-                onMouseLeave={(e) => { e.currentTarget.style.borderColor = "#2A2A2A"; e.currentTarget.style.color = "#6B5B4A"; }}>
+                onMouseLeave={(e) => { e.currentTarget.style.borderColor = "#2d3d54"; e.currentTarget.style.color = "#8a7a65"; }}>
                 {ADVISOR.email}
               </a>
               <a href={ADVISOR.profileUrl} target="_blank" rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-4 py-2.5 text-xs uppercase tracking-[0.2em] transition-all"
-                style={{ border: "1px solid #1E1E1E", color: "#3A3A3A", textDecoration: "none" }}
-                onMouseEnter={(e) => { e.currentTarget.style.borderColor = "#3A3A3A"; e.currentTarget.style.color = "#6B5B4A"; }}
-                onMouseLeave={(e) => { e.currentTarget.style.borderColor = "#1E1E1E"; e.currentTarget.style.color = "#3A3A3A"; }}>
+                style={{ border: "1px solid #243044", color: "#4d5f72", textDecoration: "none" }}
+                onMouseEnter={(e) => { e.currentTarget.style.borderColor = "#4d5f72"; e.currentTarget.style.color = "#8a7a65"; }}
+                onMouseLeave={(e) => { e.currentTarget.style.borderColor = "#243044"; e.currentTarget.style.color = "#4d5f72"; }}>
                 {t.advisorProfileBtn} →
               </a>
             </div>
@@ -844,12 +841,12 @@ function AdvisorSection({ lang }) {
 function LandingPage({ lang, setLang, onStart }) {
   const t = T[lang];
   return (
-    <div className="min-h-screen flex flex-col" style={{ background: "#0D0D0D", fontFamily: "Georgia, serif" }}>
+    <div className="min-h-screen flex flex-col" style={{ background: "#111827", fontFamily: "Georgia, serif" }}>
       <div className="fixed inset-0 pointer-events-none" style={{
-        backgroundImage: "linear-gradient(rgba(139,115,85,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(139,115,85,0.03) 1px, transparent 1px)",
+        backgroundImage: "linear-gradient(rgba(139,115,85,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(139,115,85,0.06) 1px, transparent 1px)",
         backgroundSize: "80px 80px",
       }} />
-      <header className="relative z-10 flex items-center justify-between px-8 py-6" style={{ borderBottom: "1px solid #1E1E1E" }}>
+      <header className="relative z-10 flex items-center justify-between px-8 py-6" style={{ borderBottom: "1px solid #243044" }}>
         <div className="flex items-center gap-3">
           <div className="w-6 h-6" style={{ background: "#8B7355" }}>
             <svg viewBox="0 0 24 24" fill="none" className="w-full h-full p-1">
@@ -859,22 +856,22 @@ function LandingPage({ lang, setLang, onStart }) {
           <span className="text-xs uppercase tracking-[0.3em] hidden sm:inline" style={{ color: "#8B7355" }}>{t.appName}</span>
         </div>
         <div className="flex items-center gap-4">
-          <div className="text-xs uppercase tracking-widest hidden md:block" style={{ color: "#3D3D3D" }}>{t.appTagline}</div>
+          <div className="text-xs uppercase tracking-widest hidden md:block" style={{ color: "#4d5f72" }}>{t.appTagline}</div>
           <LangToggle lang={lang} setLang={setLang} />
         </div>
       </header>
       <main className="relative z-10 flex-1 flex flex-col items-center justify-center px-6 py-20 text-center">
         <div className="inline-block text-xs uppercase tracking-[0.4em] px-4 py-2 mb-10"
-          style={{ border: "1px solid #2A2A2A", color: "#8B7355" }}>
+          style={{ border: "1px solid #2d3d54", color: "#8B7355" }}>
           {t.confidential}
         </div>
         <h1 className="text-5xl md:text-7xl font-normal leading-tight mb-8 max-w-4xl"
-          style={{ color: "#E8DCC8", letterSpacing: "-0.02em" }}>
+          style={{ color: "#f1e8d8", letterSpacing: "-0.02em" }}>
           {t.heroTitle1}<br />
           <span style={{ color: "#C8A96E", fontStyle: "italic" }}>{t.heroTitle2}</span>
         </h1>
-        <p className="text-lg max-w-xl mb-4" style={{ color: "#6B6B6B", lineHeight: 1.8 }}>{t.heroSub}</p>
-        <p className="text-sm max-w-lg mb-16" style={{ color: "#4A4A4A", lineHeight: 1.8 }}>{t.heroDesc}</p>
+        <p className="text-lg max-w-xl mb-4" style={{ color: "#8896aa", lineHeight: 1.8 }}>{t.heroSub}</p>
+        <p className="text-sm max-w-lg mb-16" style={{ color: "#5a6b7e", lineHeight: 1.8 }}>{t.heroDesc}</p>
         <button onClick={onStart}
           className="px-12 py-5 text-sm uppercase tracking-[0.3em] transition-all duration-300"
           style={{ background: "#8B7355", color: "#0D0D0D" }}
@@ -882,11 +879,11 @@ function LandingPage({ lang, setLang, onStart }) {
           onMouseLeave={(e) => (e.currentTarget.style.background = "#8B7355")}>
           {t.startBtn}
         </button>
-        <div className="flex gap-16 mt-20" style={{ borderTop: "1px solid #1A1A1A", paddingTop: "2rem" }}>
+        <div className="flex gap-16 mt-20" style={{ borderTop: "1px solid #1e2d40", paddingTop: "2rem" }}>
           {t.stats.map(([num, label]) => (
             <div key={label} className="text-center">
               <div className="text-2xl mb-1" style={{ color: "#8B7355" }}>{num}</div>
-              <div className="text-xs uppercase tracking-widest" style={{ color: "#3D3D3D" }}>{label}</div>
+              <div className="text-xs uppercase tracking-widest" style={{ color: "#4d5f72" }}>{label}</div>
             </div>
           ))}
         </div>
@@ -895,8 +892,8 @@ function LandingPage({ lang, setLang, onStart }) {
       {/* About the Advisor — trust section before starting */}
       <LandingAdvisorCard lang={lang} />
 
-      <footer className="relative z-10 text-center py-6" style={{ borderTop: "1px solid #1A1A1A" }}>
-        <p className="text-xs" style={{ color: "#2D2D2D" }}>{t.disclaimer}</p>
+      <footer className="relative z-10 text-center py-6" style={{ borderTop: "1px solid #1e2d40" }}>
+        <p className="text-xs" style={{ color: "#3d4f62" }}>{t.disclaimer}</p>
       </footer>
     </div>
   );
@@ -906,18 +903,18 @@ function EmailCapturePage({ lang, setLang, onSubmit, onSkip }) {
   const t = T[lang];
   const [email, setEmail] = useState("");
   return (
-    <div className="min-h-screen flex flex-col" style={{ background: "#0D0D0D", fontFamily: "Georgia, serif" }}>
+    <div className="min-h-screen flex flex-col" style={{ background: "#111827", fontFamily: "Georgia, serif" }}>
       <AppHeader lang={lang} setLang={setLang} onRestart={onSkip} />
       <div className="flex-1 flex items-center justify-center px-6">
         <div className="w-full max-w-md text-center">
           <div className="text-xs uppercase tracking-[0.4em] mb-6" style={{ color: "#8B7355" }}>{t.emailStep}</div>
-          <h2 className="text-3xl font-normal mb-4" style={{ color: "#E8DCC8" }}>{t.emailDesc}</h2>
-          <p className="text-sm mb-10" style={{ color: "#4A4A4A", lineHeight: 1.7 }}>{t.confidential}</p>
+          <h2 className="text-3xl font-normal mb-4" style={{ color: "#f1e8d8" }}>{t.emailDesc}</h2>
+          <p className="text-sm mb-10" style={{ color: "#5a6b7e", lineHeight: 1.7 }}>{t.confidential}</p>
           <input
             type="email" value={email} onChange={(e) => setEmail(e.target.value)}
             placeholder={t.emailPlaceholder}
             className="w-full px-5 py-4 mb-4 text-sm outline-none"
-            style={{ background: "#111", border: "1px solid #2A2A2A", color: "#E8DCC8", fontFamily: "Georgia, serif" }}
+            style={{ background: "#192032", border: "1px solid #2d3d54", color: "#f1e8d8", fontFamily: "Georgia, serif" }}
           />
           <button onClick={() => onSubmit(email)}
             className="w-full py-4 text-sm uppercase tracking-[0.3em] mb-4 transition-all"
@@ -926,7 +923,7 @@ function EmailCapturePage({ lang, setLang, onSubmit, onSkip }) {
             onMouseLeave={(e) => (e.currentTarget.style.background = "#8B7355")}>
             {t.emailBtn}
           </button>
-          <button onClick={onSkip} className="text-xs uppercase tracking-widest" style={{ color: "#3A3A3A" }}>{t.skipEmail}</button>
+          <button onClick={onSkip} className="text-xs uppercase tracking-widest" style={{ color: "#4d5f72" }}>{t.skipEmail}</button>
         </div>
       </div>
     </div>
@@ -984,17 +981,18 @@ function QuestionnairePage({ lang, setLang, onComplete, onBack }) {
     if (questionIdx > 0) { setQuestionIdx(questionIdx - 1); return; }
     setShowIntro(true);
   };
-const optStyle = (val) => ({
-    border: selected === val ? "1px solid #8B7355" : "1px solid #2A2A2A",
+
+  const optStyle = (val) => ({
+    border: selected === val ? "1px solid #8B7355" : "1px solid #2d3d54",
     background: selected === val ? "rgba(139,115,85,0.1)" : "transparent",
-    color: selected === val ? "#C8A96E" : "#6B6B6B",
+    color: selected === val ? "#C8A96E" : "#8896aa",
     transition: "all 0.2s ease", cursor: "pointer",
     padding: "14px 24px", marginBottom: "10px",
     display: "flex", alignItems: "center", gap: "12px",
   });
 
   return (
-    <div className="min-h-screen flex flex-col" style={{ background: "#0D0D0D", fontFamily: "Georgia, serif" }}>
+    <div className="min-h-screen flex flex-col" style={{ background: "#111827", fontFamily: "Georgia, serif" }}>
       <AppHeader lang={lang} setLang={setLang} onRestart={() => onBack(true)} showBack onBack={goBack} />
       <div className="px-6 md:px-8 pt-6 pb-2">
         <ProgressBar current={showIntro ? globalIdx : globalIdx + 1} total={totalQ} lang={lang} />
@@ -1004,20 +1002,20 @@ const optStyle = (val) => ({
         <div className="flex-1 flex items-center justify-center px-6 py-12">
           <div className="w-full max-w-2xl">
             <div className="flex items-center gap-4 mb-8">
-              <span className="text-5xl font-thin" style={{ color: "#2A2A2A" }}>{section.number}</span>
-              <div style={{ width: "1px", height: "48px", background: "#2A2A2A" }} />
+              <span className="text-5xl font-thin" style={{ color: "#2d3d54" }}>{section.number}</span>
+              <div style={{ width: "1px", height: "48px", background: "#2d3d54" }} />
               <div>
                 <div className="text-xs uppercase tracking-[0.3em] mb-1" style={{ color: "#8B7355" }}>
                   {lang === "fr" ? "Section" : "Section"} {sectionIdx + 1} {lang === "fr" ? "sur" : "of"} {SECTIONS_DATA.length}
                 </div>
-                <h2 className="text-2xl font-normal" style={{ color: "#E8DCC8" }}>{section.title[lang]}</h2>
+                <h2 className="text-2xl font-normal" style={{ color: "#f1e8d8" }}>{section.title[lang]}</h2>
               </div>
             </div>
-            <p className="text-base leading-relaxed mb-10" style={{ color: "#7A6A5A", fontStyle: "italic", borderLeft: "2px solid #2A2A2A", paddingLeft: "20px" }}>
+            <p className="text-base leading-relaxed mb-10" style={{ color: "#9a8a75", fontStyle: "italic", borderLeft: "2px solid #2A2A2A", paddingLeft: "20px" }}>
               {t.sectionIntros[section.id]}
             </p>
             {sectionIdx === 0 && (
-              <div className="mb-8 px-4 py-3" style={{ border: "1px solid #1E1E1E", background: "rgba(139,115,85,0.04)" }}>
+              <div className="mb-8 px-4 py-3" style={{ border: "1px solid #243044", background: "rgba(139,115,85,0.06)" }}>
                 <p className="text-xs leading-relaxed" style={{ color: "#4A4040" }}>{t.preQuestionnaireDisclaimer}</p>
               </div>
             )}
@@ -1035,29 +1033,29 @@ const optStyle = (val) => ({
           style={{ opacity: animating ? 0 : 1, transform: animating ? "translateX(-20px)" : "translateX(0)", transition: "opacity 0.3s ease, transform 0.3s ease" }}>
           <div className="w-full max-w-2xl">
             <div className="flex items-center gap-3 mb-8">
-              <span className="text-3xl font-thin" style={{ color: "#2A2A2A" }}>{section.number}</span>
-              <div style={{ width: "1px", height: "32px", background: "#2A2A2A" }} />
+              <span className="text-3xl font-thin" style={{ color: "#2d3d54" }}>{section.number}</span>
+              <div style={{ width: "1px", height: "32px", background: "#2d3d54" }} />
               <div>
                 <div className="text-xs uppercase tracking-[0.3em]" style={{ color: "#8B7355" }}>{section.title[lang]}</div>
-                <div className="text-xs" style={{ color: "#3A3A3A" }}>{lang === "fr" ? "Question" : "Question"} {questionIdx + 1} {lang === "fr" ? "sur" : "of"} {section.questions.length}</div>
+                <div className="text-xs" style={{ color: "#4d5f72" }}>{lang === "fr" ? "Question" : "Question"} {questionIdx + 1} {lang === "fr" ? "sur" : "of"} {section.questions.length}</div>
               </div>
             </div>
-            <h2 className="text-2xl md:text-3xl font-normal leading-snug mb-2" style={{ color: "#E8DCC8" }}>
+            <h2 className="text-2xl md:text-3xl font-normal leading-snug mb-2" style={{ color: "#f1e8d8" }}>
               {q.text[lang]}
               <TooltipIcon text={q.tooltip[lang]} />
             </h2>
             <div className="mt-10">
               {[{ val: "yes", label: t.yes }, { val: "no", label: t.no }, { val: "unsure", label: t.unsure }].map((opt) => (
                 <div key={opt.val} onClick={() => advance(opt.val)} style={optStyle(opt.val)}
-                  onMouseEnter={(e) => { if (selected !== opt.val) { e.currentTarget.style.borderColor = "#4A4A4A"; e.currentTarget.style.color = "#9A9A8A"; } }}
-                  onMouseLeave={(e) => { if (selected !== opt.val) { e.currentTarget.style.borderColor = "#2A2A2A"; e.currentTarget.style.color = "#6B6B6B"; } }}>
+                  onMouseEnter={(e) => { if (selected !== opt.val) { e.currentTarget.style.borderColor = "#5a6b7e"; e.currentTarget.style.color = "#9A9A8A"; } }}
+                  onMouseLeave={(e) => { if (selected !== opt.val) { e.currentTarget.style.borderColor = "#2d3d54"; e.currentTarget.style.color = "#8896aa"; } }}>
                   <div className="w-4 h-4 rounded-full flex-shrink-0"
                     style={{ border: selected === opt.val ? "4px solid #8B7355" : "1px solid #3A3A3A" }} />
                   <span className="text-sm tracking-wide">{opt.label}</span>
                 </div>
               ))}
             </div>
-            <div className="mt-8 text-xs" style={{ color: "#2D2D2D" }}>{globalIdx + 1} / {totalQ} — {t.selectToContinue}</div>
+            <div className="mt-8 text-xs" style={{ color: "#3d4f62" }}>{globalIdx + 1} / {totalQ} — {t.selectToContinue}</div>
           </div>
         </main>
       )}
@@ -1131,7 +1129,7 @@ function ResultsPage({ answers, email, lang, setLang, onRestart }) {
 <style>
   * { margin:0; padding:0; box-sizing:border-box; }
   body { font-family: Georgia, serif; color: #1a1a1a; background: white; }
-  .cover { background: #0D0D0D; color: #E8DCC8; padding: 60px; }
+  .cover { background: #0f172a; color: #f1e8d8; padding: 60px; }
   .cover-badge { display:inline-block; border:1px solid #8B7355; color:#8B7355; font-size:10px; letter-spacing:0.3em; text-transform:uppercase; padding:6px 14px; margin-bottom:24px; }
   .cover h1 { font-size:38px; font-weight:normal; margin:0 0 8px; }
   .cover .sub { color:#6B6B6B; font-size:14px; }
@@ -1244,7 +1242,7 @@ function ResultsPage({ answers, email, lang, setLang, onRestart }) {
   };
 
   return (
-    <div className="min-h-screen" style={{ background: "#0D0D0D", fontFamily: "Georgia, serif" }}>
+    <div className="min-h-screen" style={{ background: "#111827", fontFamily: "Georgia, serif" }}>
       <AppHeader lang={lang} setLang={setLang} onRestart={onRestart} showRetake />
 
       <div className="max-w-3xl mx-auto px-6 py-16">
@@ -1258,39 +1256,40 @@ function ResultsPage({ answers, email, lang, setLang, onRestart }) {
               {status.label}
             </div>
           </div>
-          <p className="mt-6 text-sm max-w-lg mx-auto leading-relaxed" style={{ color: "#6B6B6B" }}>{t.statusDesc(score)}</p>
+          <p className="mt-6 text-sm max-w-lg mx-auto leading-relaxed" style={{ color: "#8896aa" }}>{t.statusDesc(score)}</p>
           {/* Results disclaimer */}
-          <div className="mt-6 px-4 py-3 max-w-lg mx-auto" style={{ border: "1px solid #1A1A1A", background: "rgba(139,115,85,0.03)" }}>
-            <p className="text-xs leading-relaxed" style={{ color: "#3A3A3A" }}>{t.resultsDisclaimer}</p>
+          <div className="mt-6 px-4 py-3 max-w-lg mx-auto" style={{ border: "1px solid #1e2d40", background: "rgba(139,115,85,0.06)" }}>
+            <p className="text-xs leading-relaxed" style={{ color: "#4d5f72" }}>{t.resultsDisclaimer}</p>
           </div>
         </div>
+
         {/* Benchmark Insights */}
-        <div className="mb-14 p-6 md:p-8" style={{ border: "1px solid #1E1E1E", background: "rgba(139,115,85,0.03)" }}>
+        <div className="mb-14 p-6 md:p-8" style={{ border: "1px solid #243044", background: "rgba(139,115,85,0.06)" }}>
           <div className="flex items-center gap-4 mb-2">
             <h2 className="text-xs uppercase tracking-[0.3em]" style={{ color: "#8B7355" }}>{t.benchmarkTitle}</h2>
-            <div className="flex-1 h-px" style={{ background: "#1E1E1E" }} />
+            <div className="flex-1 h-px" style={{ background: "#1e2d40" }} />
           </div>
-          <p className="text-xs mb-6" style={{ color: "#4A4A4A" }}>{t.benchmarkSub}</p>
+          <p className="text-xs mb-6" style={{ color: "#5a6b7e" }}>{t.benchmarkSub}</p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
             {[
               { num: `${percentileNum}${lang === "fr" ? "e" : "th"}`, label: t.percentileLabel, sub: percentileLabel },
               { num: t.avgScoreVal, label: t.avgScore, sub: lang === "fr" ? "Basé sur les données simulées" : "Based on simulated data" },
               { num: score >= 80 ? "↑" : score >= 60 ? "→" : "↓", label: lang === "fr" ? "Tendance" : "Trend", sub: status.label },
             ].map((item) => (
-              <div key={item.label} className="p-4" style={{ background: "#111", border: "1px solid #1E1E1E" }}>
+              <div key={item.label} className="p-4" style={{ background: "#192032", border: "1px solid #243044" }}>
                 <div className="text-2xl mb-1" style={{ color: "#C8A96E" }}>{item.num}</div>
                 <div className="text-xs uppercase tracking-widest mb-1" style={{ color: "#8B7355" }}>{item.label}</div>
-                <div className="text-xs" style={{ color: "#4A4A4A" }}>{item.sub}</div>
+                <div className="text-xs" style={{ color: "#5a6b7e" }}>{item.sub}</div>
               </div>
             ))}
           </div>
-          <div className="pt-4" style={{ borderTop: "1px solid #1A1A1A" }}>
+          <div className="pt-4" style={{ borderTop: "1px solid #1e2d40" }}>
             <div className="text-xs uppercase tracking-[0.3em] mb-4" style={{ color: "#8B7355" }}>{t.commonIssues}</div>
             {t.commonIssuesList.map((issue, i) => (
               <div key={i} className="flex items-center gap-3 mb-2">
                 <span className="w-5 h-5 flex items-center justify-center text-xs rounded-full flex-shrink-0"
-                  style={{ background: "#1A1A1A", color: "#8B7355", border: "1px solid #2A2A2A" }}>{i + 1}</span>
-                <span className="text-xs" style={{ color: "#6B5B4A" }}>{issue}</span>
+                  style={{ background: "#1a2a3a", color: "#8B7355", border: "1px solid #2d3d54" }}>{i + 1}</span>
+                <span className="text-xs" style={{ color: "#8a7a65" }}>{issue}</span>
               </div>
             ))}
           </div>
@@ -1300,7 +1299,7 @@ function ResultsPage({ answers, email, lang, setLang, onRestart }) {
         <div className="mb-14">
           <div className="flex items-center gap-4 mb-6">
             <h2 className="text-xs uppercase tracking-[0.3em]" style={{ color: "#8B7355" }}>{t.categoryBreakdown}</h2>
-            <div className="flex-1 h-px" style={{ background: "#1E1E1E" }} />
+            <div className="flex-1 h-px" style={{ background: "#1e2d40" }} />
           </div>
           {SECTIONS_DATA.map((s) => (
             <CategoryBar key={s.id} label={s.title[lang]} score={getSectionScore(s.id, answers)} />
@@ -1312,17 +1311,17 @@ function ResultsPage({ answers, email, lang, setLang, onRestart }) {
           <div className="mb-14">
             <div className="flex items-center gap-4 mb-6">
               <h2 className="text-xs uppercase tracking-[0.3em]" style={{ color: "#8B7355" }}>{t.top3Actions}</h2>
-              <div className="flex-1 h-px" style={{ background: "#1E1E1E" }} />
+              <div className="flex-1 h-px" style={{ background: "#1e2d40" }} />
             </div>
             {top3Actions.map((flag, i) => {
               const actions = getRiskActions(flag.id, lang);
               return (
-                <div key={flag.id} className="flex gap-4 mb-4 p-5" style={{ border: "1px solid #1A1A1A" }}>
+                <div key={flag.id} className="flex gap-4 mb-4 p-5" style={{ border: "1px solid #1e2d40" }}>
                   <div className="w-7 h-7 rounded-full flex items-center justify-center text-xs flex-shrink-0"
-                    style={{ background: ["#7B1D1D","#7B4F00","#3D3D2A"][i], color: "#E8DCC8" }}>{i + 1}</div>
+                    style={{ background: ["#7B1D1D","#7B4F00","#3D3D2A"][i], color: "#f1e8d8" }}>{i + 1}</div>
                   <div>
-                    <div className="text-xs mb-2" style={{ color: "#C8B99A" }}>{flag.question.text[lang]}</div>
-                    <p className="text-xs leading-relaxed" style={{ color: "#6B5B4A" }}>{actions[lang]}</p>
+                    <div className="text-xs mb-2" style={{ color: "#d4c5a9" }}>{flag.question.text[lang]}</div>
+                    <p className="text-xs leading-relaxed" style={{ color: "#8a7a65" }}>{actions[lang]}</p>
                   </div>
                 </div>
               );
@@ -1335,25 +1334,25 @@ function ResultsPage({ answers, email, lang, setLang, onRestart }) {
           <div className="mb-14">
             <div className="flex items-center gap-4 mb-6">
               <h2 className="text-xs uppercase tracking-[0.3em]" style={{ color: "#8B7355" }}>{t.priorityFlags}</h2>
-              <div className="flex-1 h-px" style={{ background: "#1E1E1E" }} />
+              <div className="flex-1 h-px" style={{ background: "#1e2d40" }} />
             </div>
             {top5Flags.map((flag, i) => {
               const actions = getRiskActions(flag.id, lang);
               return (
-                <div key={flag.id} className="p-6 mb-4 rounded-sm" style={{ border: "1px solid #1E1E1E", background: "rgba(255,255,255,0.01)" }}>
+                <div key={flag.id} className="p-6 mb-4 rounded-sm" style={{ border: "1px solid #243044", background: "rgba(255,255,255,0.02)" }}>
                   <div className="flex items-start gap-4">
                     <div className="w-7 h-7 rounded-full flex items-center justify-center text-xs flex-shrink-0 mt-0.5"
-                      style={{ background: i === 0 ? "#7B1D1D" : i === 1 ? "#7B4F00" : "#2A2A1A", color: "#E8DCC8" }}>{i + 1}</div>
+                      style={{ background: i === 0 ? "#7B1D1D" : i === 1 ? "#7B4F00" : "#2A2A1A", color: "#f1e8d8" }}>{i + 1}</div>
                     <div className="flex-1">
-                      <div className="text-sm leading-snug mb-2" style={{ color: "#C8B99A" }}>{flag.question.text[lang]}</div>
-                      <p className="text-xs leading-relaxed mb-4" style={{ color: "#4A4A4A" }}>{flag.question.tooltip[lang]}</p>
-                      <div className="p-3" style={{ background: "rgba(139,115,85,0.07)", borderLeft: "2px solid #8B7355" }}>
+                      <div className="text-sm leading-snug mb-2" style={{ color: "#d4c5a9" }}>{flag.question.text[lang]}</div>
+                      <p className="text-xs leading-relaxed mb-4" style={{ color: "#5a6b7e" }}>{flag.question.tooltip[lang]}</p>
+                      <div className="p-3" style={{ background: "rgba(139,115,85,0.09)", borderLeft: "2px solid #8B7355" }}>
                         <div className="text-xs uppercase tracking-[0.2em] mb-1" style={{ color: "#8B7355" }}>{t.recommendedAction}</div>
-                        <p className="text-xs leading-relaxed" style={{ color: "#9A8A7A" }}>{actions[lang]}</p>
+                        <p className="text-xs leading-relaxed" style={{ color: "#a89a8a" }}>{actions[lang]}</p>
                       </div>
                     </div>
                     <div className="text-xs px-2 py-1 flex-shrink-0"
-                      style={{ border: "1px solid #2A2A2A", color: "#4A4A4A" }}>
+                      style={{ border: "1px solid #2d3d54", color: "#5a6b7e" }}>
                       {flag.partial ? t.unsureLabel : t.riskLabel}
                     </div>
                   </div>
@@ -1373,20 +1372,20 @@ function ResultsPage({ answers, email, lang, setLang, onRestart }) {
         <div className="mb-14">
           <div className="flex items-center gap-4 mb-5">
             <h2 className="text-xs uppercase tracking-[0.3em]" style={{ color: "#8B7355" }}>{t.scoreBreakdown}</h2>
-            <div className="flex-1 h-px" style={{ background: "#1E1E1E" }} />
+            <div className="flex-1 h-px" style={{ background: "#1e2d40" }} />
           </div>
           {[
-            { label: t.dealReady, range: "80–100", active: score >= 80, color: "#2D6A4F", accent: "#52B788", bg: "#0A1F14" },
-            { label: t.moderateRisk, range: "60–79", active: score >= 60 && score < 80, color: "#C8860A", accent: "#F4A261", bg: "#1A1100" },
-            { label: t.highRisk, range: lang === "fr" ? "Moins de 60" : "Below 60", active: score < 60, color: "#E63946", accent: "#E63946", bg: "#1A0000" },
+            { label: t.dealReady, range: "80–100", active: score >= 80, color: "#2D6A4F", accent: "#52B788", bg: "#0d2318" },
+            { label: t.moderateRisk, range: "60–79", active: score >= 60 && score < 80, color: "#C8860A", accent: "#F4A261", bg: "#1d1508" },
+            { label: t.highRisk, range: lang === "fr" ? "Moins de 60" : "Below 60", active: score < 60, color: "#E63946", accent: "#E63946", bg: "#1d0808" },
           ].map((tier) => (
             <div key={tier.label} className="flex items-center justify-between px-5 py-3 mb-1"
-              style={{ background: tier.active ? tier.bg : "transparent", border: `1px solid ${tier.active ? tier.accent : "#1A1A1A"}` }}>
+              style={{ background: tier.active ? tier.bg : "transparent", border: `1px solid ${tier.active ? tier.accent : "#1e2d40"}` }}>
               <div className="flex items-center gap-3">
-                <div className="w-2 h-2 rounded-full" style={{ background: tier.active ? tier.accent : "#2A2A2A" }} />
-                <span className="text-sm" style={{ color: tier.active ? tier.accent : "#3A3A3A" }}>{tier.label}</span>
+                <div className="w-2 h-2 rounded-full" style={{ background: tier.active ? tier.accent : "#2d3d54" }} />
+                <span className="text-sm" style={{ color: tier.active ? tier.accent : "#4d5f72" }}>{tier.label}</span>
               </div>
-              <span className="text-xs" style={{ color: tier.active ? tier.accent : "#2A2A2A" }}>{tier.range}</span>
+              <span className="text-xs" style={{ color: tier.active ? tier.accent : "#2d3d54" }}>{tier.range}</span>
             </div>
           ))}
         </div>
@@ -1402,9 +1401,9 @@ function ResultsPage({ answers, email, lang, setLang, onRestart }) {
           </button>
           <button onClick={onRestart}
             className="flex-1 py-4 text-xs uppercase tracking-[0.3em] transition-all"
-            style={{ border: "1px solid #2A2A2A", color: "#4A4A4A", background: "transparent" }}
-            onMouseEnter={(e) => { e.currentTarget.style.borderColor = "#4A4A4A"; e.currentTarget.style.color = "#6B6B6B"; }}
-            onMouseLeave={(e) => { e.currentTarget.style.borderColor = "#2A2A2A"; e.currentTarget.style.color = "#4A4A4A"; }}>
+            style={{ border: "1px solid #2d3d54", color: "#5a6b7e", background: "transparent" }}
+            onMouseEnter={(e) => { e.currentTarget.style.borderColor = "#5a6b7e"; e.currentTarget.style.color = "#8896aa"; }}
+            onMouseLeave={(e) => { e.currentTarget.style.borderColor = "#2d3d54"; e.currentTarget.style.color = "#5a6b7e"; }}>
             {t.retake}
           </button>
         </div>
@@ -1412,7 +1411,7 @@ function ResultsPage({ answers, email, lang, setLang, onRestart }) {
         {/* Advisor Section */}
         <AdvisorSection lang={lang} />
 
-        <p className="text-xs text-center mt-10 leading-relaxed" style={{ color: "#2D2D2D" }}>{t.disclaimer}</p>
+        <p className="text-xs text-center mt-10 leading-relaxed" style={{ color: "#3d4f62" }}>{t.disclaimer}</p>
       </div>
     </div>
   );
